@@ -1,0 +1,71 @@
+title: "[Presentation] Paper Discussion"
+labels: ["presentation", "paper-discussion"]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this template for discussions about student paper presentations. Include the paper details and facilitate peer discussion.
+  
+  - type: input
+    id: presenter
+    attributes:
+      label: "Presenter Name"
+      description: "Who is presenting this paper?"
+      placeholder: "Student name"
+    validations:
+      required: true
+
+  - type: input
+    id: paper-title
+    attributes:
+      label: "Paper Title"
+      description: "Full title of the paper being discussed"
+      placeholder: "Complete paper title..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: paper-citation
+    attributes:
+      label: "Full Citation"
+      description: "Complete citation in scientific format"
+      placeholder: "Author(s), Year, Journal, Volume(Issue), Pages, DOI..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: key-findings
+    attributes:
+      label: "Key Findings Summary"
+      description: "Summarize the main findings and conclusions"
+      placeholder: "Briefly summarize the paper's main findings, methods, and conclusions..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: course-connections
+    attributes:
+      label: "Course Topic Connections"
+      description: "How does this paper connect to course topics and other readings?"
+      placeholder: "Explain how this paper relates to specific weeks, concepts, or other assigned readings..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: discussion-questions
+    attributes:
+      label: "Discussion Questions"
+      description: "Questions for class discussion about this paper"
+      placeholder: "Provide 3-5 thoughtful questions about methods, implications, limitations, or broader connections..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional-resources
+    attributes:
+      label: "Additional Resources (Optional)"
+      description: "Related papers, datasets, or resources that complement this study"
+      placeholder: "Share relevant supplementary materials, follow-up studies, or related resources..."
+    validations:
+      required: false

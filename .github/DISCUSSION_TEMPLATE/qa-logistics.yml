@@ -1,0 +1,52 @@
+title: "[Q&A] Course Question"
+labels: ["question", "course-logistics"]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this template for questions about course logistics, assignments, technical issues, or clarifications.
+  
+  - type: dropdown
+    id: question-type
+    attributes:
+      label: "Question Type"
+      description: "What type of question are you asking?"
+      options:
+        - "Assignment Requirements"
+        - "Course Deadlines"
+        - "Technical/GitHub Issues"
+        - "Presentation Scheduling"
+        - "Course Content Clarification"
+        - "Grading Questions"
+        - "Resource Access"
+        - "Other Logistics"
+    validations:
+      required: true
+
+  - type: textarea
+    id: question-details
+    attributes:
+      label: "Question Details"
+      description: "Provide specific details about your question"
+      placeholder: "Be specific about what you need help with, including any error messages, assignment details, or context..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: attempted-solutions
+    attributes:
+      label: "What have you tried? (Optional)"
+      description: "If applicable, what steps have you already taken to resolve this?"
+      placeholder: "Describe any troubleshooting steps, resources you've checked, or attempts you've made..."
+    validations:
+      required: false
+
+  - type: input
+    id: urgency
+    attributes:
+      label: "Timeline/Urgency"
+      description: "When do you need this resolved by?"
+      placeholder: "e.g., Before next class, by assignment deadline, not urgent"
+    validations:
+      required: false
