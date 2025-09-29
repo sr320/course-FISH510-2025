@@ -1,5 +1,8 @@
-labels: ["course-discussion"]
+name: "Course Discussion"
+about: "Use this template for weekly course discussions."
 title: "[Week X] Discussion Topic"
+labels: ["course-discussion"]
+
 body:
   - type: markdown
     attributes:
@@ -39,5 +42,3 @@ body:
       label: "References (optional)"
       description: "Include any relevant citations or references"
       placeholder: "List any papers, resources, or citations..."
-    validations:
-      required: false
