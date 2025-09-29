@@ -1,0 +1,43 @@
+labels: ["course-discussion"]
+title: "[Week X] Discussion Topic"
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this template for weekly course discussions. Please replace X with the appropriate week number.
+  
+  - type: input
+    id: week
+    attributes:
+      label: "Week Number"
+      description: "Which week of the course is this discussion for?"
+      placeholder: "e.g., Week 3"
+    validations:
+      required: true
+
+  - type: textarea
+    id: discussion-topic
+    attributes:
+      label: "Discussion Topic/Question"
+      description: "What topic or question would you like to discuss?"
+      placeholder: "Provide your discussion topic or question here..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: initial-thoughts
+    attributes:
+      label: "Initial Thoughts/Analysis"
+      description: "Share your initial thoughts, analysis, or insights on this topic"
+      placeholder: "Provide your analysis or thoughts here..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: references
+    attributes:
+      label: "References (optional)"
+      description: "Include any relevant citations or references"
+      placeholder: "List any papers, resources, or citations..."
+    validations:
+      required: false
