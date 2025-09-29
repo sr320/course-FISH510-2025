@@ -1,138 +1,155 @@
 # Glossary
 
-A curated list of key terms and definitions relevant to FISH 510 (Data Science / Bioinformatics for Fisheries & Environmental Genomics). Terms are grouped by theme and listed alphabetically within each theme. Feel free to expand.
+FISH 510: Marine Organism Resilience and Epigenetics (Winter 2025)
+A living glossary of key concepts, mechanisms, methodologies, and analytical terms used in the study of environmental epigenetics and resilience in marine organisms. Definitions are concise (1–2 sentences). Contributions via pull request are encouraged.
 
-## Core Concepts
-**Algorithm**: A finite sequence of well-defined instructions used to solve a class of problems.
-**Annotation (Genome)**: The process of identifying functional elements (genes, regulatory regions, features) in a genome sequence.
-**API (Application Programming Interface)**: A defined interface that allows software components or services to communicate programmatically.
-**Automation**: Using scripts or workflows to execute repeatable tasks with minimal manual intervention.
-**Benchmarking**: Systematic comparison of tools, pipelines, or methods using defined performance metrics.
-**Best Practice**: A standardized, evidence-based method shown to produce reliable, reproducible results.
-**Bias (Statistical)**: Systematic deviation of an estimator's expected value from the true value.
-**Big Data**: Datasets so large or complex that traditional tools struggle with storage, processing, or analysis.
-**Command-Line Interface (CLI)**: Text-based interface for interacting with software by typing commands.
-**Container**: A lightweight, reproducible software environment packaging code, dependencies, and runtime (e.g., Docker, Apptainer/Singularity).
-**Data Lifecycle**: Stages from planning, collection, processing, analysis, sharing, to preservation.
-**Data Provenance**: Documentation of the origin, transformations, and handling history of data.
-**Data Stewardship**: Responsible management of data assets across their lifecycle.
-**Dependency**: External library, package, or tool required for software or analysis to run.
-**Environment (Computing)**: A collection of software dependencies and configurations used to run code reproducibly.
-**High-Performance Computing (HPC)**: Use of clustered or specialized systems for large-scale or parallel computation.
-**Metadata**: Data describing other data (e.g., sample ID, collection date, instrument settings).
-**Open Science**: Practices promoting transparency, accessibility, reproducibility, and reuse of research outputs.
-**Pipeline**: An ordered sequence of analytical steps transforming raw data into interpretable results.
-**Reproducibility**: Ability to obtain the same results using the same data, code, and environment.
-**Replication (Scientific)**: Independent repetition of a study, potentially with new data, to confirm findings.
-**Scalability**: Capacity of a method or system to handle increasing data volume or complexity without failing.
-**Version Control**: Tracking and managing changes to files (e.g., with Git) over time.
+## 1. Core Epigenetic Concepts
+**Epigenetics**: Study of heritable (cell or organism-level) changes in gene function not caused by alterations in DNA sequence.  
+**Epigenome**: The complete set of epigenetic marks (e.g., DNA methylation, histone modifications, chromatin accessibility) in a cell at a given time.  
+**Epigenetic Mechanism**: Molecular process (e.g., DNA methylation, histone modification, non-coding RNA) regulating chromatin state and gene expression.  
+**Chromatin**: DNA–protein complex (primarily histones) that packages the genome and modulates accessibility.  
+**Nucleosome**: Fundamental chromatin unit—~147 bp of DNA wrapped around a histone octamer.  
+**Histone**: Core proteins (H2A, H2B, H3, H4) forming the nucleosome; subject to post-translational modification.  
+**Histone Modification**: Chemical alteration (e.g., acetylation, methylation, phosphorylation) of histone tails influencing chromatin structure and transcription.  
+**DNA Methylation (5mC)**: Addition of a methyl group to cytosine (often at CpG sites) affecting gene regulation and genome stability.  
+**Hydroxymethylcytosine (5hmC)**: Oxidized derivative of 5mC involved in active demethylation and regulatory processes.  
+**CpG**: Cytosine-phosphate-Guanine dinucleotide; hotspot for DNA methylation in many eukaryotes.  
+**CpG Island**: GC-rich, CpG-enriched genomic region often associated with promoters.  
+**Non-CpG Methylation**: Methylation at CHG or CHH contexts (H = A/C/T); more common in plants and some animal tissues.  
+**Chromatin Remodeling**: ATP-dependent repositioning or restructuring of nucleosomes altering accessibility.  
+**Chromatin Accessibility**: Degree to which DNA is open for binding (often assayed by ATAC-seq).  
+**Epiallele**: Genomic locus with distinct, stable epigenetic states among individuals or cells.  
+**Epimutation**: Aberrant or spontaneous change in an epigenetic mark that may affect phenotype.  
+**Transgenerational Epigenetic Inheritance**: Transmission of epigenetic states across generations beyond direct exposure.  
+**Intergenerational Effect**: Parental exposure effect observable in immediate offspring (often still involving direct germline/environment interaction).  
+**Developmental Programming**: Early-life epigenetic setting influencing long-term phenotype or stress tolerance.  
+**Plasticity (Phenotypic)**: Ability of a genotype to produce different phenotypes across environments.  
+**Canalization**: Reduction of phenotypic variation despite environmental or genetic perturbation.  
+**Resilience (Biological)**: Capacity to resist, absorb, or recover from environmental stress while maintaining function.  
+**Acclimation**: Reversible, non-genetic physiological adjustment to changing environment.  
+**Adaptation**: Heritable change improving fitness under specific environmental conditions.  
+**Carryover Effect**: Past environmental exposure influencing performance in a future life stage.  
 
-## Statistics & Experimental Design
-**ANOVA (Analysis of Variance)**: Statistical test comparing means across multiple groups.
-**Blocking**: Grouping experimental units sharing similar characteristics to reduce variance.
-**Bootstrap**: Resampling method for estimating variability or confidence intervals.
-**Confidence Interval (CI)**: Range likely to contain a true parameter value at a specified confidence level.
-**Correction for Multiple Testing**: Adjusting p-values to control false positives (e.g., FDR, Bonferroni).
-**Effect Size**: Quantitative measure of the magnitude of a phenomenon.
-**False Discovery Rate (FDR)**: Expected proportion of false positives among declared significant results.
-**Hypothesis (Null / Alternative)**: Statement tested statistically; null often represents no effect.
-**Overfitting**: Model capturing noise rather than signal, reducing generalizability.
-**p-value**: Probability of observing data as extreme or more so under the null hypothesis.
-**Permutation Test**: Non-parametric method using label shuffling to assess significance.
-**Power (Statistical)**: Probability of correctly rejecting a false null hypothesis.
-**Randomization**: Assigning treatments by chance to reduce bias.
-**Replication (Experimental)**: Independent observations collected under the same experimental conditions.
+## 2. Environmental Stressors & Marine Context
+**Thermal Stress**: Physiological strain caused by elevated or fluctuating temperature regimes.  
+**Ocean Acidification (OA)**: Decrease in seawater pH due to CO2 absorption altering carbonate chemistry.  
+**Hypoxia**: Reduced dissolved oxygen levels impairing metabolism and survival.  
+**Salinity Stress**: Osmotic challenge due to deviation from optimal salinity.  
+**pH Fluctuation**: Short-term variability in seawater pH impacting acid-base balance.  
+**Oxidative Stress**: Imbalance favoring reactive oxygen species over antioxidant defenses.  
+**Multi-stressor Exposure**: Simultaneous or sequential environmental challenges with interactive effects.  
+**Sublethal Stress**: Exposure insufficient to cause mortality but influencing physiology or fitness.  
+**Environmental Gradient**: Spatial or temporal variation in a key abiotic factor (e.g., pH, temperature).  
+**Selective Pressure**: Environmental factor influencing differential survival or reproduction.  
 
-## Bioinformatics & Genomics
-**Alignment (Sequence)**: Arranging sequences to identify regions of similarity (local vs global).
-**Assembler**: Software that reconstructs longer sequences (contigs, scaffolds) from reads.
-**Barcode (Molecular)**: Short sequence tag used to demultiplex pooled samples.
-**Base Call**: Assignment of a nucleotide identity during sequencing.
-**Coverage (Depth)**: Average number of times a nucleotide position is sequenced.
-**De novo Assembly**: Constructing a genome or transcriptome without a reference sequence.
-**Demultiplexing**: Sorting reads into sample bins based on barcodes.
-**GC Content**: Proportion of nucleotides that are G or C in a sequence.
-**Homology**: Shared ancestry between sequences or structures.
-**Indel**: Insertion or deletion mutation in a sequence.
-**K-mer**: Substring of length k used in indexing, assembly, and error correction.
-**Mapping Quality (MAPQ)**: Confidence score for the correctness of a read alignment.
-**Ortholog**: Genes in different species derived from a common ancestor via speciation.
-**Paralog**: Genes related by duplication within a genome.
-**Read**: Raw sequence string produced by a sequencing instrument.
-**Reference Genome**: Representative genome assembly used for alignment and annotation.
-**SNP (Single Nucleotide Polymorphism)**: Single base position with variation among individuals.
-**Structural Variant (SV)**: Large-scale genomic alteration (e.g., inversion, translocation, duplication, deletion).
-**Transcriptome**: Complete set of RNA transcripts present in a cell or tissue under specific conditions.
-**Variant Calling**: Computational identification of sequence differences relative to a reference.
+## 3. Genomic & Regulatory Features
+**Promoter**: Region upstream (or proximal) to a transcription start site influencing initiation.  
+**Enhancer**: Distal regulatory element increasing transcription of target genes in a context-dependent manner.  
+**Gene Body Methylation (GBM)**: Methylation within transcribed regions; in some taxa associated with constitutive expression.  
+**Differentially Methylated Cytosine (DMC)**: Single CpG (or site) showing statistically significant methylation difference between groups.  
+**Differentially Methylated Region (DMR)**: Contiguous genomic region with coordinated methylation change.  
+**Regulatory Element**: DNA sequence modulating transcription factor binding and gene expression.  
+**Non-coding RNA (ncRNA)**: RNA molecules (miRNA, lncRNA, piRNA) with regulatory functions but not translated.  
+**Small RNA**: Short regulatory RNA class (e.g., miRNA, siRNA) influencing post-transcriptional regulation.  
+**Long Non-coding RNA (lncRNA)**: >200 nt RNA with roles in chromatin remodeling, scaffolding, or transcriptional regulation.  
 
-## Transcriptomics & Expression Analysis
-**Counts Matrix**: Table of gene (or transcript) features by samples with raw or normalized counts.
-**Differential Expression (DE)**: Statistical comparison of expression levels between conditions.
-**FPKM/TPM**: Normalization metrics for RNA-seq expression accounting for transcript length and depth.
-**Normalization**: Adjusting data to remove technical effects (e.g., library size, composition biases).
-**rRNA Depletion**: Removal of ribosomal RNA to enrich for mRNA.
-**Splice Variant (Isoform)**: Alternative transcript produced via differential splicing.
-**UMI (Unique Molecular Identifier)**: Short random sequence enabling duplicate removal and molecule counting.
+## 4. Experimental Techniques & Assays
+**WGBS (Whole Genome Bisulfite Sequencing)**: Base-resolution genome-wide DNA methylation profiling using bisulfite conversion.  
+**RRBS (Reduced Representation Bisulfite Sequencing)**: Enrichment-based bisulfite method focusing on CpG-rich fragments.  
+**Bisulfite Conversion**: Chemical treatment converting unmethylated cytosines to uracils for methylation inference.  
+**OxBS / TAB-seq**: Modified bisulfite strategies distinguishing 5mC from 5hmC.  
+**MBD-seq / MeDIP-seq**: Enrichment-based methods capturing methylated DNA via binding proteins or antibodies.  
+**ChIP-seq**: Chromatin immunoprecipitation sequencing identifying protein or histone modification binding sites.  
+**CUT&RUN / CUT&Tag**: Targeted chromatin profiling techniques with lower background than traditional ChIP-seq.  
+**ATAC-seq**: Assay for Transposase-Accessible Chromatin mapping open chromatin regions.  
+**RNA-seq**: Sequencing-based transcript quantification for expression analysis.  
+**Small RNA-seq**: Sequencing library targeting regulatory small RNAs (e.g., miRNAs).  
+**qPCR / RT-qPCR**: Quantitative amplification used for validation of expression or enrichment.  
+**ddPCR (Digital Droplet PCR)**: Partitioned amplification enabling absolute quantification of target molecules.  
+**LC-MS/MS (Histone PTM Profiling)**: Mass spectrometry approach to quantify histone post-translational modifications.  
+**Multi-omics Integration**: Combined analysis of datasets (e.g., methylome + transcriptome + proteome) to infer regulatory interactions.  
 
-## Proteomics & Functional Analysis
-**Annotation (Functional)**: Assignment of biological function to sequences (e.g., GO terms).
-**Domain (Protein)**: Conserved structural or functional unit within a protein.
-**GO (Gene Ontology)**: Structured vocabulary describing gene product function, process, and location.
-**Pathway Analysis**: Evaluation of enrichment of genes in known biological pathways.
+## 5. Bioinformatics & Data Processing
+**Read Alignment**: Mapping sequencing reads to a reference genome or assembly.  
+**Bisulfite Aligner**: Specialized aligner (e.g., Bismark) accounting for C-to-T conversions.  
+**Reference Genome / Draft Assembly**: Baseline sequence used for mapping; draft may contain gaps or scaffolding uncertainties.  
+**Coverage (Depth)**: Average number of reads covering a genomic position; influences confidence in methylation calls.  
+**Conversion Rate**: Proportion of unmethylated cytosines successfully converted during bisulfite treatment (quality metric).  
+**Beta Value / Methylation Proportion**: Fraction of reads at a cytosine supporting methylation (mC / total).  
+**Filtering (Coverage Threshold)**: Removal of sites with insufficient read depth to reduce noise.  
+**Batch Effect**: Unwanted variation associated with processing groups (e.g., lane, date).  
+**Normalization**: Adjusting data to reduce technical bias while preserving biological signal.  
+**Feature Annotation**: Assigning genomic features (promoter, exon, intergenic) to coordinates.  
+**Genome Annotation**: Identification of genes, transcripts, and functional elements in a sequence assembly.  
+**Pipeline (Workflow)**: Ordered, reproducible sequence of computational steps.  
+**Containerization**: Packaging software and dependencies for reproducible execution (e.g., Docker, Apptainer).  
 
-## Ecological & Fisheries Genomics
-**Effective Population Size (Ne)**: Size of an idealized population showing equivalent genetic drift.
-**Environmental DNA (eDNA)**: Genetic material obtained directly from environmental samples (water, soil) without isolating organisms.
-**Genetic Diversity**: Variation in genetic composition within and among populations.
-**Hybridization**: Interbreeding between distinct populations or species.
-**Local Adaptation**: Population-level genetic differentiation conferring fitness advantages in a particular environment.
-**Population Structure**: Non-random distribution of genetic variation across space or groups.
-**Selective Sweep**: Reduction in genetic variation due to recent positive selection.
-**Stock (Fisheries)**: Managed unit of a harvested species defined by biological or management criteria.
+## 6. Statistical & Analytical Concepts
+**Experimental Unit**: The smallest entity that can be independently assigned a treatment.  
+**Replication (Biological)**: Independent samples capturing natural variation.  
+**Technical Replicate**: Repeat measurement of the same biological material capturing assay variance.  
+**Randomization**: Allocation of samples to treatments without systematic bias.  
+**Blocking**: Grouping similar experimental units to control nuisance variation.  
+**Power (Statistical)**: Probability of detecting a true effect given design parameters.  
+**False Discovery Rate (FDR)**: Expected proportion of false positives among declared significant tests.  
+**Multiple Testing Correction**: Adjustment (e.g., Benjamini-Hochberg) controlling error inflation.  
+**Effect Size**: Magnitude of a measured difference or association.  
+**Overdispersion**: Greater variance than expected under a nominal distribution (e.g., binomial), relevant for methylation counts.  
+**Gene-by-Environment Interaction (GxE)**: Differential phenotypic effect of genotype across environmental conditions.  
+**Heritability (h²)**: Proportion of phenotypic variance attributable to additive genetic variance.  
+**Reaction Norm**: Pattern of phenotypic expression of a genotype across environments.  
 
-## Data Management & Sharing
-**Checksum**: Fixed-length value (hash) verifying file integrity.
-**Data Dictionary**: Structured description of variables, formats, and allowable values.
-**FAIR Principles**: Guidelines to make data Findable, Accessible, Interoperable, and Reusable.
-**Persistent Identifier (PID)**: Stable reference (e.g., DOI) for a digital object.
-**README**: Introductory file documenting repository purpose, structure, and usage.
+## 7. Marine Life History & Development
+**Gametogenesis**: Formation and maturation of gametes (eggs, sperm).  
+**Embryogenesis**: Early developmental phase from fertilization to larval stages.  
+**Larval Stage**: Dispersive, often planktonic life phase preceding settlement.  
+**Metamorphosis**: Transition from larval to juvenile/adult form involving morphological and regulatory shifts.  
+**Settlement**: Process by which a larva adopts a benthic or sessile lifestyle.  
+**Maternal Effect**: Influence of maternal phenotype or provisioning on offspring traits.  
+**Paternal Effect**: Influence of paternal factors (e.g., sperm epigenome) on offspring phenotype.  
 
-## Software & Workflow Engineering
-**CI (Continuous Integration)**: Automated testing and validation of code changes upon commits or pull requests.
-**Issue (Tracker)**: A logged task, bug report, or feature request in a version control platform.
-**Linter**: Tool that checks source code for stylistic and syntactic issues.
-**Makefile**: Declarative file describing build or workflow rules executed by `make`.
-**Module (HPC)**: Managed environment package loaded to configure software paths.
-**Notebook (Computational)**: Interactive document mixing code, narrative, and outputs (e.g., Jupyter, R Markdown, Quarto).
-**Semantic Versioning (SemVer)**: Versioning scheme MAJOR.MINOR.PATCH indicating compatibility and changes.
-**Shell Script**: File containing a sequence of shell commands for batch execution.
-**Task Runner / Workflow Engine**: Tool orchestrating pipelines (e.g., Snakemake, Nextflow, CWL, WDL).
+## 8. Resilience & Evolutionary Dynamics
+**Epigenetic Variation**: Diversity in epigenetic marks among individuals or populations.  
+**Standing Genetic Variation**: Pre-existing genomic diversity enabling adaptive response.  
+**Adaptive Potential**: Capacity of a population to evolve in response to selection.  
+**Selective Sweep**: Reduction in variation following fixation of an advantageous allele.  
+**Local Adaptation**: Enhanced fitness of a population in its native environment relative to non-local populations.  
+**Fitness**: Reproductive success and contribution to subsequent generations.  
+**Tolerance Threshold**: Environmental magnitude beyond which performance declines sharply.  
 
-## Quality Control (QC) & Validation
-**Adapter Trimming**: Removal of sequencing adapters from read ends.
-**Contamination**: Presence of unintended sequences or samples in data.
-**Error Rate**: Frequency of incorrect base calls or measurements.
-**Outlier**: Observation inconsistent with the expected distribution of the data.
-**Quality Score (Phred)**: Log-scaled score representing base call accuracy probability.
-**Technical Replicate**: Repeated measurement of the same biological material capturing assay variation.
+## 9. Data Stewardship & Reproducibility
+**Metadata**: Structured descriptors of samples, protocols, instruments, and processing steps.  
+**Data Provenance**: Traceable lineage of data transformations.  
+**Checksum**: Hash value verifying data integrity.  
+**FAIR Principles**: Guidelines to ensure data are Findable, Accessible, Interoperable, Reusable.  
+**Version Control**: System (e.g., Git) tracking file changes over time.  
+**Open Science**: Practices promoting transparency, accessibility, and reuse of research outputs.  
+**Notebook (Computational)**: Interactive, documented analysis environment (e.g., Jupyter, R Markdown, Quarto).  
 
-## Visualization & Interpretation
-**Heatmap**: Matrix-based visualization using color to encode values.
-**Manhattan Plot**: Scatter plot of genomic positions vs statistical significance (e.g., GWAS).
-**PCA (Principal Component Analysis)**: Dimensionality reduction method projecting variance into orthogonal components.
-**Volcano Plot**: Scatter plot of effect size (e.g., log fold change) vs statistical significance.
+## 10. Ethical & Societal Considerations
+**De-identification**: Removal or masking of personal or sensitive identifiers.  
+**Sensitive Species Data**: Location or biological data requiring restricted dissemination to prevent exploitation.  
+**Benefit Sharing**: Equitable distribution of advantages arising from biological or genomic research.  
+**Indigenous Knowledge (IK)**: Culturally embedded environmental knowledge systems; requires respectful, consent-based integration.  
 
-## Security & Ethics
-**Access Control**: Mechanisms restricting who can view or modify resources.
-**De-identification**: Removing or masking personal identifiers from datasets.
-**IRB (Institutional Review Board)**: Committee overseeing ethical aspects of research involving humans.
-**Sensitive Data**: Information requiring restricted handling due to privacy, ethical, or legal constraints.
+## 11. Quality Control (QC)
+**Adapter Trimming**: Removal of sequencing adapters from read ends.  
+**Quality Score (Phred)**: Log-scaled probability that a base call is incorrect.  
+**Contamination**: Presence of exogenous or unintended DNA sequences in a dataset.  
+**Outlier Sample**: Sample deviating markedly from cohort distribution (may reflect biology or artifact).  
+**Conversion Efficiency (Bisulfite)**: Proportion of unmethylated cytosines converted; low efficiency biases methylation upward.  
+**Duplication Rate**: Fraction of reads representing PCR or optical duplicates.  
 
-## Miscellaneous
-**Backlog**: Prioritized queue of pending tasks or issues.
-**Idempotent**: Operation that yields the same result if executed multiple times without side effects.
-**Latency**: Delay between request initiation and completion.
-**Throughput**: Amount of data processed in a given time frame.
+## 12. Visualization & Interpretation
+**Heatmap**: Matrix visualization encoding values (e.g., methylation proportions) via color gradients.  
+**Volcano Plot**: Scatter plot of effect size vs significance (e.g., log2 fold change vs -log10 p-value).  
+**PCA (Principal Component Analysis)**: Ordination method summarizing major axes of variance.  
+**Manhattan Plot**: Genomic coordinate vs statistical metric plot (adapted for epigenome scans).  
+**Genome Browser Track**: Visual representation of aligned reads or features across genomic coordinates.  
 
----
-Contributions: Add new terms via pull request. Keep definitions concise (1–2 sentences) and supply citations if specialized.
+## 13. Miscellaneous & Operational
+**Pipeline Orchestration**: Automated coordination of multi-step analyses (e.g., Snakemake, Nextflow).  
+**Container**: Reproducible software environment encapsulating dependencies.  
+**Module (HPC)**: Managed environment configuration enabling software loading.  
+**Idempotent Step**: Analysis step producing identical results upon re-execution without side effects.  
+**Backlog**: Prioritized list of pending tasks or enhancements.
