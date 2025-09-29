@@ -41,7 +41,7 @@ By the end of this week, students will be able to:
 - [Epigentics Explainer : YouTube](https://www.youtube.com/embed/MD3Fc0XOjWk)
 
 ## Assessment
-- Participation in class discussion (formative)
+- [Participation in class discussion (formative)](https://github.com/sr320/course-FISH510-2025/discussions/new?category=course-discussion)
 - GitHub Discussions introduction post (5% of final grade)
 - Engagement with peer posts (formative)
 
