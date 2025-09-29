@@ -1,0 +1,68 @@
+title: "[Research Connection] Topic Link"
+labels: ["research-connection", "insights"]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this template to share connections between course content and your research, recent papers, or broader marine science contexts.
+  
+  - type: dropdown
+    id: connection-type
+    attributes:
+      label: "Type of Connection"
+      description: "What type of research connection are you sharing?"
+      options:
+        - "Personal Research Connection"
+        - "Recent Paper/News Sharing"
+        - "Cross-Week Topic Integration"
+        - "Broader Marine Science Context"
+        - "Conservation/Management Implications"
+        - "Methodological Innovation"
+    validations:
+      required: true
+
+  - type: textarea
+    id: course-topic-reference
+    attributes:
+      label: "Course Topic Reference"
+      description: "Which course topics or weeks does this connect to?"
+      placeholder: "Reference specific weeks, concepts, mechanisms, or readings that relate to your connection..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: connection-description
+    attributes:
+      label: "Connection Description"
+      description: "Describe the connection, insight, or broader context you want to share"
+      placeholder: "Explain how this connects to course material, what insights it provides, or why it's relevant to marine epigenetics..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: implications
+    attributes:
+      label: "Implications and Questions"
+      description: "What are the implications for marine epigenetics research or our understanding?"
+      placeholder: "Discuss broader implications, potential research directions, or questions this raises..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: references-resources
+    attributes:
+      label: "References and Resources"
+      description: "Include citations, links, or resources related to your connection"
+      placeholder: "Provide citations for papers, links to news articles, dataset references, etc..."
+    validations:
+      required: false
+
+  - type: textarea
+    id: discussion-invitation
+    attributes:
+      label: "Discussion Invitation"
+      description: "What would you like peers to consider or respond to?"
+      placeholder: "Pose questions or invite specific types of responses from your classmates..."
+    validations:
+      required: false

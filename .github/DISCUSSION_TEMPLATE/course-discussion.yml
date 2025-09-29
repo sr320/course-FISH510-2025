@@ -1,18 +1,28 @@
-title: "[Week X] Discussion Topic"
-labels: ["course-discussion"]
+title: "[Week X] Topic Discussion"
+labels: ["weekly-discussion"]
 
 body:
   - type: markdown
     attributes:
       value: |
-        Use this template for weekly course discussions. Please replace X with the appropriate week number.
+        Use this template for weekly course topic discussions. Please replace X with the appropriate week number and select the corresponding topic focus.
   
-  - type: input
+  - type: dropdown
     id: week
     attributes:
-      label: "Week Number"
+      label: "Course Week"
       description: "Which week of the course is this discussion for?"
-      placeholder: "e.g., Week 3"
+      options:
+        - "Week 1: Introduction to Marine Epigenetics"
+        - "Week 2: Environmental Stressors and Gene Expression"
+        - "Week 3: DNA Methylation in Marine Species"
+        - "Week 4: Histone Modifications and Chromatin Structure"
+        - "Week 5: Non-coding RNAs and Regulation"
+        - "Week 6: Transgenerational Epigenetic Inheritance"
+        - "Week 7: Climate Change and Epigenetic Responses"
+        - "Week 8: Population-level Epigenetic Variation"
+        - "Week 9: Methodology and Techniques"
+        - "Week 10: Current Frontiers and Future Directions"
     validations:
       required: true
 
@@ -20,23 +30,43 @@ body:
     id: discussion-topic
     attributes:
       label: "Discussion Topic/Question"
-      description: "What topic or question would you like to discuss?"
-      placeholder: "Provide your discussion topic or question here..."
+      description: "What specific aspect of this week's topic would you like to discuss?"
+      placeholder: "e.g., How do DNA methylation patterns differ between marine and terrestrial organisms? What are the methodological challenges in studying coral epigenomes?"
     validations:
       required: true
 
   - type: textarea
-    id: initial-thoughts
+    id: scientific-context
     attributes:
-      label: "Initial Thoughts/Analysis"
-      description: "Share your initial thoughts, analysis, or insights on this topic"
-      placeholder: "Provide your analysis or thoughts here..."
+      label: "Scientific Context and Evidence"
+      description: "Provide context from course readings, lectures, or additional sources"
+      placeholder: "Reference specific papers, data, figures, or concepts from the assigned readings..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: initial-analysis
+    attributes:
+      label: "Initial Analysis/Insights"
+      description: "Share your analysis, interpretation, or insights on this topic"
+      placeholder: "Provide your scientific analysis, comparisons, implications, or critical evaluation..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: discussion-questions
+    attributes:
+      label: "Questions for Peers"
+      description: "What questions would you like your classmates to consider or respond to?"
+      placeholder: "Pose 1-3 thoughtful questions that encourage deeper analysis and peer engagement..."
     validations:
       required: true
 
   - type: textarea
     id: references
     attributes:
-      label: "References (optional)"
-      description: "Include any relevant citations or references"
-      placeholder: "List any papers, resources, or citations..."
+      label: "References and Citations"
+      description: "Include citations for papers, data, or resources referenced in your post"
+      placeholder: "List citations in scientific format (Author et al., Year, Journal) and include DOIs or URLs when possible..."
+    validations:
+      required: false
