@@ -1,0 +1,53 @@
+name: "Feature request"
+description: "Use this form to propose a new feature or enhancement."
+body:
+  - type: input
+    id: title
+    attributes:
+      label: "Title"
+      description: "Short, descriptive title for the feature"
+      placeholder: "Improve performance of X"
+      required: true
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: "Summary"
+      description: "Describe the feature and why it's useful"
+      placeholder: "A brief summary of the proposed feature"
+      required: true
+
+  - type: textarea
+    id: use-cases
+    attributes:
+      label: "Use cases"
+      description: "How will people use this feature?"
+      placeholder: "- Use case 1\n- Use case 2"
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: "Priority"
+      options:
+        - value: low
+          label: "Low"
+        - value: medium
+          label: "Medium"
+        - value: high
+          label: "High"
+      default: medium
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: "Alternatives considered"
+      description: "Other approaches you considered (if any)"
+      placeholder: "Alternative A, Alternative B"
+
+  - type: checkboxes
+    id: consent
+    attributes:
+      label: "Contribution"
+      options:
+        - value: ok_contact
+          label: "I consent to being contacted for follow-up"
