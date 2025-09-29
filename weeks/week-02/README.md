@@ -29,7 +29,6 @@ By the end of this week, students will be able to:
 
 ## Required Readings
 - Hofmann, G.E. (2017). Ecological epigenetics in marine metazoans. *Frontiers in Marine Science*, 4, 4.
-- Rivera, H.E. & Chen, L. (2021). Ocean acidification and marine organism epigenomes. *Molecular Ecology*, 30(19), 4863-4877.
 
 ## Supplementary Readings
 - Putnam, H.M. & Gates, R.D. (2015). Preconditioning in the reef-building coral *Pocillopora damicornis* and the potential for trans-generational acclimatization in corals. *Journal of Experimental Biology*, 218(12), 1933-1947.

@@ -37,9 +37,8 @@ By the end of this week, students will be able to:
 - **Concept Mapping**: Develop a concept map connecting epigenetic mechanisms to marine environmental factors
 
 ## Additional Resources
-- [Epigenetics overview video](resources/videos/) (placeholder)
-- [Marine environment data sources](resources/datasets/)
 - [Key terminology glossary](glossary.md)
+- [Epigentics Explainer : YouTube](https://www.youtube.com/embed/MD3Fc0XOjWk)
 
 ## Assessment
 - Participation in class discussion (formative)
