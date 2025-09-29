@@ -25,7 +25,7 @@ By the end of this week, students will be able to:
    - Assessment methods and timeline
 
 ## Required Readings
-- Eirin-Lopez, J.M. & Putnam, H.M. (2019). Marine environmental epigenetics. *Annual Review of Marine Science*, 11, 335-368.
+- [Eirin-Lopez, J.M. & Putnam, H.M. (2019). Marine environmental epigenetics. *Annual Review of Marine Science*, 11, 335-368.](annurev-marine-010318-095114.pdf)
 
 ## Discussion Questions
 1. How do marine environments present unique challenges for epigenetic regulation compared to terrestrial environments?
@@ -33,7 +33,7 @@ By the end of this week, students will be able to:
 3. How might climate change affect epigenetic processes in marine ecosystems?
 
 ## Activities
-- **Introduction Post**: Create a post in GitHub Discussions introducing yourself and your research interests
+- **Introduction Post**: Create a post in GitHub Discussions (**Research Connection:: Personal Research Connection**) introducing yourself and your research interests
 - **Concept Mapping**: Develop a concept map connecting epigenetic mechanisms to marine environmental factors
 
 ## Additional Resources
