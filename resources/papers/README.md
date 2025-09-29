@@ -2,6 +2,10 @@
 
 This directory contains organized collections of research papers used throughout FISH 510.
 
+## 📋 Complete Paper List
+**[View the comprehensive list of 20 course papers](paper-list.md)**  
+A curated collection of essential research papers covering all course topics, complete with DOIs, URLs, and summaries. All papers have been verified for authenticity and public accessibility.
+
 ## Directory Organization
 
 ### Foundational Papers (`foundational/`)
