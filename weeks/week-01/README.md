@@ -39,6 +39,7 @@ By the end of this week, students will be able to:
 ## Additional Resources
 - [Key terminology glossary](glossary.md)
 - [Epigentics Explainer : YouTube](https://www.youtube.com/embed/MD3Fc0XOjWk)
+- [Paper audio summary](paper-summary.mp3)
 
 ## Assessment
 - [Participation in class discussion (formative)](https://github.com/sr320/course-FISH510-2025/discussions/new?category=course-discussion)
