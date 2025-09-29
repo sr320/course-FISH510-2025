@@ -25,8 +25,7 @@ By the end of this week, students will be able to:
    - Assessment methods and timeline
 
 ## Required Readings
-- Eirin-Lopez, J.M. & Putnam, H.M. (2019). Marine environmental epigenomics. *Annual Review of Marine Science*, 11, 335-368.
-- Burgess, S.C. & Marshall, D.J. (2014). Adaptive parental effects: the importance of estimating environmental predictability and offspring fitness appropriately. *Oikos*, 123(7), 769-776.
+- Eirin-Lopez, J.M. & Putnam, H.M. (2019). Marine environmental epigenetics. *Annual Review of Marine Science*, 11, 335-368.
 
 ## Discussion Questions
 1. How do marine environments present unique challenges for epigenetic regulation compared to terrestrial environments?
