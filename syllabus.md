@@ -2,14 +2,14 @@
 **Graduate Seminar Course Syllabus - Winter 2025**
 
 ## Course Information
-- **Credits**: 3
+- **Credits**: 2
 - **Format**: Graduate Seminar
 - **Prerequisites**: Graduate standing, basic knowledge of molecular biology and genetics
-- **Meeting Time**: [To be determined]
-- **Location**: [To be determined]
+- **Meeting Time**: Tuesday 1:30 - 2:20
+- **Location**: FSH 203
 
 ## Instructor Information
-[Instructor details to be added]
+Steven Roberts
 
 ## Course Description
 This graduate seminar course examines the intersection of marine organism resilience and epigenetics. Students will explore how environmental factors influence gene expression patterns in marine species and contribute to their adaptation and survival strategies. The course emphasizes critical analysis of current research literature and active participation in scientific discussions.
