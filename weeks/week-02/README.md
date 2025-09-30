@@ -28,10 +28,11 @@ By the end of this week, students will be able to:
    - Molecular techniques for measuring responses
 
 ## Required Readings
-- Hofmann, G.E. (2017). Ecological epigenetics in marine metazoans. *Frontiers in Marine Science*, 4, 4.
+- [Hofmann, G.E. (2017). Ecological epigenetics in marine metazoans. *Frontiers in Marine Science*, 4, 4.](fmars-04-00004.pdf)
+- [Kenkel, C.D. & Matz, M.V. (2016). Gene expression plasticity as a mechanism of coral adaptation to a variable environment. *Nature Ecology & Evolution*, 1, 0014.](s41559-016-0014.pdf)
 
 ## Supplementary Readings
-- Putnam, H.M. & Gates, R.D. (2015). Preconditioning in the reef-building coral *Pocillopora damicornis* and the potential for trans-generational acclimatization in corals. *Journal of Experimental Biology*, 218(12), 1933-1947.
+- [Putnam, H. M., Davidson, J. M., & Gates, R. D. (2016). Ocean acidification influences host DNA methylation and phenotypic plasticity in environmentally susceptible corals. Evolutionary Applications, 9(9), 1165–1178. https://doi.org/10.1111/eva.12408](EVA-9-1165.pdf)
 
 ## Discussion Questions
 1. Which environmental stressors pose the greatest challenges for marine organisms, and why?
