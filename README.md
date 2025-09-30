@@ -1,5 +1,5 @@
 # FISH 510: Marine Organism Resilience and Epigenetics
-**Graduate Seminar Course - Winter 2025**
+**Graduate Seminar Course - Fall 2025**
 
 ## Course Description
 This graduate seminar explores the intersection of marine organism resilience and epigenetics, examining how environmental factors influence gene expression patterns and contribute to adaptation and survival in marine ecosystems. Students will engage with current research literature, participate in discussions, and develop critical thinking skills in this rapidly evolving field.

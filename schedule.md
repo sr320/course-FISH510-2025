@@ -1,4 +1,4 @@
-# FISH 510: Course Schedule - Winter 2025
+# FISH 510: Course Schedule - Fall 2025
 **Marine Organism Resilience and Epigenetics**
 
 ## Weekly Schedule Overview
