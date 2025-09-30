@@ -1,5 +1,5 @@
 # FISH 510: Marine Organism Resilience and Epigenetics
-**Graduate Seminar Course Syllabus - Winter 2025**
+**Graduate Seminar Course Syllabus - Fall 2025**
 
 ## Course Information
 - **Credits**: 2
@@ -63,4 +63,4 @@ Students with documented disabilities who may need accommodations should make an
 The course is organized into 10 weekly modules, each focusing on specific aspects of marine epigenetics and organism resilience. Detailed schedules and assignments are available in the course schedule document.
 
 ---
-*Last updated: [Date]*
+*Last updated: September 30*
