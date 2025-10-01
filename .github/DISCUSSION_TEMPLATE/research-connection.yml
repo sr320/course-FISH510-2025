@@ -19,6 +19,7 @@ body:
         - "Broader Marine Science Context"
         - "Conservation/Management Implications"
         - "Methodological Innovation"
+        - "Something else that is cool!"
     validations:
       required: true
 
