@@ -79,8 +79,8 @@ Share broader connections and "aha!" moments.
 ## Participation Expectations
 
 ### Weekly Discussion Timeline
-- **Tuesday**: Initial posts due for the current week's topic
-- **Thursday**: Peer responses and follow-up discussions due
+- **Thursday**: Primary posts due for the upcoming week's topic
+- **Tuesday**: Peer responses and follow-up to classmates' posts due
 - **Ongoing**: Engage with presentations and synthesis discussions
 
 ### Quality over Quantity
@@ -145,7 +145,7 @@ Your participation in GitHub Discussions contributes 40% to your course grade th
 
 ### Consistency and Timeliness (5% of total grade)
 - **Regular participation**: Consistent engagement across all 10 weeks
-- **Meeting deadlines**: Timely initial posts (Tuesdays) and responses (Thursdays)
+- **Meeting deadlines**: Timely primary posts (Thursdays) and peer responses (Tuesdays)
 - **Professional communication**: Clear, respectful, and scientifically appropriate discourse
 
 ## Getting Help

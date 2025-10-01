@@ -72,8 +72,8 @@
 - **Week 10**: Final research synthesis paper - [Date TBD]
 
 ### Discussion Deadlines
-- Initial posts: Due by Thursday of each week
-- Peer responses: Due by Monday of each week
+- Primary posts: Due by Thursday of each week for the upcoming week's topic
+- Peer responses: Due by Tuesday of each week
 
 ## Reading Materials
 Detailed reading lists for each week are available in the respective week directories. All papers are accessible through:
