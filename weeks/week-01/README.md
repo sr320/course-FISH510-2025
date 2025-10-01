@@ -42,8 +42,8 @@ By the end of this week, students will be able to:
 - [Paper audio summary](paper-summary.mp3)
 
 ## Assessment
-- [Participation in class discussion (formative)](https://github.com/sr320/course-FISH510-2025/discussions/new?category=course-discussion)
-- GitHub Discussions introduction post (5% of final grade)
+- Address Discussion Questions (You can do in 1 post; category "Course Discussion")
+- GitHub Discussions introduction post (5% of final grade) (In "Research Connection")
 - Engagement with peer posts (formative)
 
 ---
