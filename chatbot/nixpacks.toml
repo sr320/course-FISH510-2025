@@ -1,0 +1,16 @@
+[phases.setup]
+nixPkgs = ["python39", "nodejs", "npm"]
+
+[phases.install]
+cmds = [
+  "pip install -r requirements.txt",
+  "cd frontend && npm install && npm run build"
+]
+
+[phases.build]
+cmds = [
+  "echo 'Build completed'"
+]
+
+[start]
+cmd = "python app.py"

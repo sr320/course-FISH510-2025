@@ -2,3 +2,13 @@
 .Rhistory
 .RData
 .Ruserdata
+
+# Chatbot security
+chatbot/.env
+chatbot/.env.local
+chatbot/.env.production
+chatbot/chroma_db/
+chatbot/venv/
+chatbot/__pycache__/
+chatbot/frontend/node_modules/
+chatbot/frontend/build/

@@ -20,6 +20,7 @@ By the end of this course, students will be able to:
 ├── README.md                    # Course overview and information
 ├── syllabus.md                 # Detailed course syllabus
 ├── schedule.md                 # Course schedule and deadlines
+├── CHATBOT.md                  # AI chatbot for course assistance
 ├── weeks/                      # Weekly course content
 │   ├── week-01/               # Introduction to Marine Epigenetics
 │   ├── week-02/               # Environmental Stressors and Gene Expression
@@ -31,10 +32,15 @@ By the end of this course, students will be able to:
 │   ├── week-08/               # Population-level Epigenetic Variation
 │   ├── week-09/               # Methodology and Techniques
 │   └── week-10/               # Current Frontiers and Future Directions
-└── resources/                  # Additional course resources
-    ├── papers/                # Key research papers
-    ├── datasets/              # Example datasets
-    └── tools/                 # Computational tools and scripts
+├── resources/                  # Additional course resources
+│   ├── papers/                # Key research papers
+│   ├── datasets/              # Example datasets
+│   └── tools/                 # Computational tools and scripts
+└── chatbot/                    # AI-powered course assistant
+    ├── app.py                 # Flask backend with RAG system
+    ├── frontend/              # React web interface
+    ├── DEPLOYMENT.md          # Web deployment guide
+    └── README.md              # Chatbot documentation
 ```
 
 ## Communication
@@ -46,6 +52,25 @@ By the end of this course, students will be able to:
 2. Review the course syllabus and schedule
 3. Join course discussions using GitHub Discussions
 4. Access additional resources in the `resources/` directory
+
+## 🤖 AI Course Assistant
+
+This course includes an AI-powered chatbot to help students with course content, assignments, and questions about marine epigenetics.
+
+### For Students
+- **Access the chatbot**: Once deployed, students can ask questions about course content, readings, and assignments
+- **Example questions**: "What is DNA methylation?", "Tell me about Week 2 readings", "What are the assignment deadlines?"
+
+### For Instructors
+- **Deploy the chatbot**: See `chatbot/DEPLOYMENT.md` for web deployment instructions
+- **Quick deploy**: Run `cd chatbot && ./deploy.sh` for guided deployment
+- **Student support**: The chatbot provides 24/7 assistance with common course questions
+
+### Features
+- AI-powered responses using course-specific knowledge
+- Real-time chat interface with marine-themed design
+- Access to all course materials, readings, and assignments
+- Source attribution for all responses
 
 ---
 *University of Washington | School of Aquatic and Fishery Sciences*

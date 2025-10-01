@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  chatbot-backend:
+    build: .
+    ports:
+      - "5000:5000"
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - FLASK_ENV=production
+    volumes:
+      - ./chroma_db:/app/chroma_db
+      - ../:/app/course_content:ro
+    restart: unless-stopped
+
+  chatbot-frontend:
+    build: ./frontend
+    ports:
+      - "3000:3000"
+    environment:
+      - REACT_APP_API_URL=http://localhost:5000
+    depends_on:
+      - chatbot-backend
+    restart: unless-stopped
+
+volumes:
+  chroma_db:
