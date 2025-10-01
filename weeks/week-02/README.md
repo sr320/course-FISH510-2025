@@ -40,8 +40,7 @@ By the end of this week, students will be able to:
 3. What are the trade-offs between plastic responses and evolutionary adaptation to environmental stress?
 
 ## Activities
-- **Literature Review Assignment**: Select and review a recent paper on environmental stress and epigenetic responses in marine organisms
-- **Case Study Analysis**: Examine a specific example of environmental stress adaptation
+- **Address Discussion Questions** 
 
 ## Lab/Field Methods Focus
 - Experimental design for stress exposure studies
@@ -49,9 +48,8 @@ By the end of this week, students will be able to:
 - Environmental monitoring and data collection
 
 ## Assessment
-- Literature review assignment (10% of final grade)
 - Participation in discussion (formative)
-- Peer review of case studies (formative)
+
 
 ---
 *Next week: DNA Methylation in Marine Species*
