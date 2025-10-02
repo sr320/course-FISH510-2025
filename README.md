@@ -49,15 +49,11 @@ By the end of this course, students will be able to:
 3. Join course discussions using GitHub Discussions
 4. Access additional resources in the `resources/` directory
 
-## 🤖 AI Course Assistant
-
-This course includes a web-based chatbot to help students with course content, assignments, and questions about marine epigenetics.
-
 ### 🚀 **Live Chatbot** (BETA)
 
 **Access the chatbot**: https://course-fish510-2025-production-16f4.up.railway.app
 
-Students can immediately start asking questions about:
+Students can immediately (maybe) start asking questions about:
 - Course content and structure
 - Assignment deadlines and requirements  
 - Reading materials and papers
