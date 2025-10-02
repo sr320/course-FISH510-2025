@@ -28,8 +28,9 @@ logger = logging.getLogger(__name__)
 app = Flask(__name__)
 CORS(app)
 
-# Configurable documents directory (set via DOCS_DIR; start.sh defaults this to repo root)
-DOCS_DIR = os.getenv("DOCS_DIR", ".")
+# Configurable documents directory (set via DOCS_DIR; defaults to repo root)
+# On Railway, working dir is /app (the chatbot folder), so ".." gets the repo root
+DOCS_DIR = os.getenv("DOCS_DIR", "..")
 
 # Initialize OpenAI components
 llm = ChatOpenAI(
