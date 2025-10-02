@@ -30,21 +30,39 @@ app = Flask(__name__)
 CORS(app)
 
 # Configurable documents directory
-# Detect if we're in a subdirectory and adjust path to get to repo root
-default_docs_dir = ".."
+# Railway deploys to /app and sets that as the working directory
+# We need to figure out if /app is the repo root or the chatbot subfolder
 current_dir = os.getcwd()
 logger.info(f"Current working directory at startup: {current_dir}")
 
-# If we're in /app/chatbot or similar, go up one level
-# If we're already at /app (Railway sets root to chatbot/), then the repo root is parent
-if current_dir.endswith('/chatbot') or current_dir == '/app':
-    default_docs_dir = ".."
+# Check if we're in the chatbot folder by looking for app.py
+if os.path.exists(os.path.join(current_dir, 'app.py')):
+    # We're in the chatbot folder, repo root is one level up
+    # But on Railway, /app might BE the chatbot folder that was deployed
+    # Check if parent directory has the expected repo structure
+    parent_dir = os.path.abspath(os.path.join(current_dir, '..'))
+    if os.path.exists(os.path.join(parent_dir, 'weeks')) or os.path.exists(os.path.join(parent_dir, 'syllabus.md')):
+        default_docs_dir = ".."
+        logger.info("Detected chatbot subdirectory, using parent as DOCS_DIR")
+    else:
+        # Parent doesn't have repo structure, we must be at repo root with chatbot deployed
+        default_docs_dir = "."
+        logger.info("Parent directory doesn't have repo structure, using current dir as DOCS_DIR")
 else:
     # We're at repo root
     default_docs_dir = "."
+    logger.info("Detected repo root, using current dir as DOCS_DIR")
 
 DOCS_DIR = os.getenv("DOCS_DIR", default_docs_dir)
 logger.info(f"DOCS_DIR set to: {DOCS_DIR} (resolves to {os.path.abspath(DOCS_DIR)})")
+
+# Safety check: don't scan system root
+abs_docs_dir = os.path.abspath(DOCS_DIR)
+if abs_docs_dir == '/' or abs_docs_dir.startswith('/usr') or abs_docs_dir.startswith('/lib'):
+    logger.error(f"UNSAFE: DOCS_DIR resolves to system directory: {abs_docs_dir}")
+    logger.error("Falling back to current directory")
+    DOCS_DIR = "."
+    logger.info(f"DOCS_DIR reset to: {DOCS_DIR} (resolves to {os.path.abspath(DOCS_DIR)})")
 
 # Initialize embeddings with fallback to local model
 use_openai = bool(os.getenv("OPENAI_API_KEY"))
@@ -94,31 +112,18 @@ class CourseChatbot:
                 logger.error(f"DOCS_DIR does not exist: {DOCS_DIR}")
                 raise FileNotFoundError(f"Directory not found: {DOCS_DIR}")
             
-            # Load with exclusions for system directories
-            exclude_patterns = [
-                "**/node_modules/**",
-                "**/.git/**",
-                "**/venv/**",
-                "**/__pycache__/**",
-                "**/site-packages/**",
-                "**/dist-packages/**",
-                "**/usr/local/**",
-                "**/usr/lib/**"
-            ]
-            
+            # Load documents (DirectoryLoader in this version doesn't support exclude parameter)
             loader_md = DirectoryLoader(
                 DOCS_DIR,
                 glob="**/*.md",
                 loader_cls=TextLoader,
-                show_progress=True,
-                exclude=exclude_patterns
+                show_progress=True
             )
             loader_pdf = DirectoryLoader(
                 DOCS_DIR,
                 glob="**/*.pdf",
                 loader_cls=PyPDFLoader,
-                show_progress=True,
-                exclude=exclude_patterns
+                show_progress=True
             )
             logger.info("Loading Markdown files...")
             md_docs = loader_md.load()
