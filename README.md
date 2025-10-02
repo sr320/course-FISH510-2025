@@ -53,7 +53,7 @@ By the end of this course, students will be able to:
 
 This course includes a web-based chatbot to help students with course content, assignments, and questions about marine epigenetics.
 
-### 🚀 **Live Chatbot Available Now!**
+### 🚀 **Live Chatbot** (BETA)
 
 **Access the chatbot**: https://course-fish510-2025-production-16f4.up.railway.app
 
