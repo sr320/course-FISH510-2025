@@ -35,20 +35,18 @@ By the end of this week, students will be able to:
 2. What challenges arise when studying methylation in non-model marine organisms?
 3. How might environmental factors specifically influence CpG methylation patterns?
 
-## Student Presentation Topics
-- Methylation in coral species
-- Fish methylomes and environmental adaptation
-- Mollusk methylation patterns
-- Technical advances in bisulfite sequencing
+## Student Presentation Topic
+
+
 
 ## Activities
-- **Methods Workshop**: Introduction to bisulfite sequencing data analysis
+- **Methods Workshop**: As time allows - introduction to bisulfite sequencing data analysis
 - **Data Exploration**: Examine published methylation datasets
 
 ## Assessment
 - Student presentation (15% of final grade)
 - Participation in methods workshop (formative)
-- Discussion leadership (formative)
+- Discussion participation (formative)
 
 ---
 *Next week: Histone Modifications and Chromatin Structure*
