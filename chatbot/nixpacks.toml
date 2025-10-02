@@ -1,14 +1,15 @@
 [phases.setup]
-nixPkgs = ["python311"]
+nixPkgs = ["python311", "gcc", "g++"]
 
 [phases.install]
 cmds = [
+  "pip install --upgrade pip",
   "pip install -r requirements.txt"
 ]
 
 [phases.build]
 cmds = [
-  "echo 'Build completed'"
+  "echo 'Enhanced chatbot build completed'"
 ]
 
 [start]
