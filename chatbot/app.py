@@ -58,6 +58,13 @@ class CourseChatbot:
         try:
             # Load course documents (Markdown + PDFs) from the configured directory
             logger.info(f"Loading documents from DOCS_DIR={DOCS_DIR}")
+            logger.info(f"Absolute path: {os.path.abspath(DOCS_DIR)}")
+            
+            # Check if directory exists
+            if not os.path.exists(DOCS_DIR):
+                logger.error(f"DOCS_DIR does not exist: {DOCS_DIR}")
+                raise FileNotFoundError(f"Directory not found: {DOCS_DIR}")
+            
             loader_md = DirectoryLoader(
                 DOCS_DIR,
                 glob="**/*.md",
@@ -70,7 +77,9 @@ class CourseChatbot:
                 loader_cls=PyPDFLoader,
                 show_progress=True
             )
+            logger.info("Loading Markdown files...")
             md_docs = loader_md.load()
+            logger.info("Loading PDF files...")
             pdf_docs = loader_pdf.load()
             documents = md_docs + pdf_docs
             logger.info(f"Loaded {len(md_docs)} markdown and {len(pdf_docs)} PDFs from {DOCS_DIR}")
@@ -81,20 +90,24 @@ class CourseChatbot:
                 logger.info("Capped documents to 2000 for performance")
             
             # Split documents into chunks
+            logger.info(f"Splitting {len(documents)} documents into chunks...")
             text_splitter = RecursiveCharacterTextSplitter(
                 chunk_size=800,
                 chunk_overlap=160,
                 length_function=len,
             )
             texts = text_splitter.split_documents(documents)
+            logger.info(f"Created {len(texts)} text chunks")
             
             # Create vector store
+            logger.info(f"Creating vector store with {len(texts)} chunks...")
             self.vectorstore = Chroma.from_documents(
                 documents=texts,
                 embedding=embeddings,
                 collection_name=collection_name,
                 client=client
             )
+            logger.info("Vector store created successfully")
             
             # Create QA chain with custom prompt
             prompt_template = """You are a helpful assistant for FISH 510: Marine Organism Resilience and Epigenetics, a graduate seminar course at the University of Washington. 
@@ -120,6 +133,7 @@ If the question is about a specific week or topic, reference the relevant materi
                 input_variables=["context", "question"]
             )
             
+            logger.info("Creating QA chain...")
             self.qa_chain = RetrievalQA.from_chain_type(
                 llm=llm,
                 chain_type="stuff",
@@ -128,7 +142,7 @@ If the question is about a specific week or topic, reference the relevant materi
                 return_source_documents=True
             )
             
-            logger.info(f"Knowledge base initialized with {len(texts)} document chunks")
+            logger.info(f"✅ Knowledge base initialized successfully with {len(texts)} document chunks")
             
         except Exception as e:
             logger.error(f"Error setting up knowledge base: {e}")
@@ -160,10 +174,15 @@ def initialize_chatbot():
     """Initialize chatbot in background"""
     global chatbot
     try:
+        logger.info("=== Starting chatbot initialization ===")
+        logger.info(f"DOCS_DIR: {DOCS_DIR}")
+        logger.info(f"OpenAI API key present: {bool(os.getenv('OPENAI_API_KEY'))}")
+        logger.info(f"Current working directory: {os.getcwd()}")
         chatbot = CourseChatbot()
-        logger.info("Chatbot initialized successfully")
+        logger.info("=== Chatbot initialized successfully ===")
     except Exception as e:
-        logger.error(f"Failed to initialize chatbot: {e}")
+        logger.error(f"=== FAILED to initialize chatbot ===")
+        logger.error(f"Error: {e}", exc_info=True)
         chatbot = None
 
 # Start initialization in background
@@ -378,6 +397,21 @@ def startup_check():
         "knowledge_base_ready": bool(chatbot and getattr(chatbot, "vectorstore", None))
     })
 
+@app.route('/api/debug', methods=['GET'])
+def debug_info():
+    """Debug endpoint to check chatbot status"""
+    return jsonify({
+        "chatbot_exists": chatbot is not None,
+        "chatbot_type": str(type(chatbot)),
+        "has_vectorstore": bool(chatbot and hasattr(chatbot, 'vectorstore') and chatbot.vectorstore),
+        "has_qa_chain": bool(chatbot and hasattr(chatbot, 'qa_chain') and chatbot.qa_chain),
+        "docs_dir": DOCS_DIR,
+        "docs_dir_exists": os.path.exists(DOCS_DIR),
+        "docs_dir_absolute": os.path.abspath(DOCS_DIR),
+        "current_working_dir": os.getcwd(),
+        "openai_key_present": bool(os.getenv('OPENAI_API_KEY')),
+    })
+
 @app.route('/api/test-llm', methods=['GET'])
 def test_llm():
     """Test endpoint to verify LLM is working"""
@@ -395,7 +429,11 @@ def test_llm():
             return jsonify({
                 "status": "error",
                 "llm_working": False,
-                "message": "Chatbot not initialized yet"
+                "message": "Chatbot not initialized yet",
+                "debug_info": {
+                    "chatbot_exists": chatbot is not None,
+                    "has_qa_chain": bool(chatbot and hasattr(chatbot, 'qa_chain') and chatbot.qa_chain)
+                }
             })
     except Exception as e:
         return jsonify({
