@@ -20,7 +20,6 @@ By the end of this course, students will be able to:
 ├── README.md                    # Course overview and information
 ├── syllabus.md                 # Detailed course syllabus
 ├── schedule.md                 # Course schedule and deadlines
-├── CHATBOT.md                  # AI chatbot for course assistance
 ├── weeks/                      # Weekly course content
 │   ├── week-01/               # Introduction to Marine Epigenetics
 │   ├── week-02/               # Environmental Stressors and Gene Expression
@@ -37,11 +36,7 @@ By the end of this course, students will be able to:
 │   ├── datasets/              # Example datasets
 │   └── tools/                 # Computational tools and scripts
 └── chatbot/                    # AI-powered course assistant (DEPLOYED)
-    ├── app.py                 # Flask backend with chat interface
-    ├── frontend/              # React web interface (optional)
-    ├── DEPLOYMENT.md          # Web deployment guide
-    ├── SECURITY.md            # Security best practices
-    └── README.md              # Chatbot documentation
+
 ```
 
 ## Communication
@@ -60,7 +55,7 @@ This course includes a web-based chatbot to help students with course content, a
 
 ### 🚀 **Live Chatbot Available Now!**
 
-**Access the chatbot**: https://course-fish510-2025-production.up.railway.app
+**Access the chatbot**: https://course-fish510-2025-production-16f4.up.railway.app
 
 Students can immediately start asking questions about:
 - Course content and structure
