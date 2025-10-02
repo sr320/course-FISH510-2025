@@ -69,24 +69,6 @@ Students can immediately start asking questions about:
 - Key concepts in marine epigenetics
 - Climate change and organism responses
 
-### For Students
-- **Interactive Chat Interface**: Type questions and get instant responses
-- **Quick Question Buttons**: One-click access to common questions
-- **24/7 Availability**: Get help anytime, anywhere
-- **Example questions**: "What is DNA methylation?", "Tell me about assignments", "What papers should I read?"
-
-### For Instructors
-- **Already Deployed**: The chatbot is live and ready for student use
-- **No Setup Required**: Students can access it immediately
-- **Customizable**: See `chatbot/` directory for code and customization options
-- **Student Support**: Provides 24/7 assistance with common course questions
-
-### Features
-- **Intelligent Responses**: Keyword-based system with comprehensive course knowledge
-- **Real-time Chat Interface**: Interactive web interface with marine-themed design
-- **Quick Questions**: Pre-built buttons for common student queries
-- **Reliable Operation**: No external dependencies, always available
-- **Course-Specific**: Designed specifically for FISH 510 content and requirements
 
 ---
 *University of Washington | School of Aquatic and Fishery Sciences*
