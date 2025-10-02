@@ -28,9 +28,22 @@ logger = logging.getLogger(__name__)
 app = Flask(__name__)
 CORS(app)
 
-# Configurable documents directory (set via DOCS_DIR; defaults to repo root)
-# On Railway, working dir is /app (the chatbot folder), so ".." gets the repo root
-DOCS_DIR = os.getenv("DOCS_DIR", "..")
+# Configurable documents directory
+# Detect if we're in a subdirectory and adjust path to get to repo root
+default_docs_dir = ".."
+current_dir = os.getcwd()
+logger.info(f"Current working directory at startup: {current_dir}")
+
+# If we're in /app/chatbot or similar, go up one level
+# If we're already at /app (Railway sets root to chatbot/), then the repo root is parent
+if current_dir.endswith('/chatbot') or current_dir == '/app':
+    default_docs_dir = ".."
+else:
+    # We're at repo root
+    default_docs_dir = "."
+
+DOCS_DIR = os.getenv("DOCS_DIR", default_docs_dir)
+logger.info(f"DOCS_DIR set to: {DOCS_DIR} (resolves to {os.path.abspath(DOCS_DIR)})")
 
 # Initialize OpenAI components
 llm = ChatOpenAI(
@@ -66,24 +79,43 @@ class CourseChatbot:
                 logger.error(f"DOCS_DIR does not exist: {DOCS_DIR}")
                 raise FileNotFoundError(f"Directory not found: {DOCS_DIR}")
             
+            # Load with exclusions for system directories
+            exclude_patterns = [
+                "**/node_modules/**",
+                "**/.git/**",
+                "**/venv/**",
+                "**/__pycache__/**",
+                "**/site-packages/**",
+                "**/dist-packages/**",
+                "**/usr/local/**",
+                "**/usr/lib/**"
+            ]
+            
             loader_md = DirectoryLoader(
                 DOCS_DIR,
                 glob="**/*.md",
                 loader_cls=TextLoader,
-                show_progress=True
+                show_progress=True,
+                exclude=exclude_patterns
             )
             loader_pdf = DirectoryLoader(
                 DOCS_DIR,
                 glob="**/*.pdf",
                 loader_cls=PyPDFLoader,
-                show_progress=True
+                show_progress=True,
+                exclude=exclude_patterns
             )
             logger.info("Loading Markdown files...")
             md_docs = loader_md.load()
             logger.info("Loading PDF files...")
             pdf_docs = loader_pdf.load()
+            
+            # Filter out system paths from loaded documents
+            md_docs = [doc for doc in md_docs if not any(exclude in doc.metadata.get('source', '') for exclude in ['/usr/', 'site-packages', 'dist-packages'])]
+            pdf_docs = [doc for doc in pdf_docs if not any(exclude in doc.metadata.get('source', '') for exclude in ['/usr/', 'site-packages', 'dist-packages'])]
+            
             documents = md_docs + pdf_docs
-            logger.info(f"Loaded {len(md_docs)} markdown and {len(pdf_docs)} PDFs from {DOCS_DIR}")
+            logger.info(f"Loaded {len(md_docs)} markdown and {len(pdf_docs)} PDFs from {DOCS_DIR} (after filtering system files)")
             
             # Safety cap to avoid excessive indexing in constrained environments
             if len(documents) > 2000:

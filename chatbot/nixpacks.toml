@@ -9,7 +9,9 @@ cmds = [
 
 [phases.build]
 cmds = [
-  "echo 'Enhanced chatbot build completed'"
+  "echo 'Enhanced chatbot build completed'",
+  "echo 'Working directory:' && pwd",
+  "echo 'Contents:' && ls -la"
 ]
 
 [start]
