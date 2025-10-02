@@ -46,22 +46,85 @@ def home():
             
             <div class="chat-box">
                 <h3>🤖 Chat with the Course Assistant</h3>
-                <p>Ask questions about:</p>
-                <ul>
-                    <li>Course content and structure</li>
-                    <li>Assignment deadlines and requirements</li>
-                    <li>Reading materials and papers</li>
-                    <li>Key concepts in marine epigenetics</li>
-                    <li>Climate change and organism responses</li>
-                </ul>
+                <div id="chat-container">
+                    <div id="messages" style="height: 300px; overflow-y: auto; border: 1px solid #ccc; padding: 10px; margin: 10px 0; background: white;"></div>
+                    <div style="display: flex; gap: 10px;">
+                        <input type="text" id="messageInput" placeholder="Ask a question about the course..." style="flex: 1; padding: 10px; border: 1px solid #ccc; border-radius: 5px;">
+                        <button onclick="sendMessage()" style="padding: 10px 20px; background: #0369a1; color: white; border: none; border-radius: 5px; cursor: pointer;">Send</button>
+                    </div>
+                </div>
                 
-                <p><strong>API Endpoints:</strong></p>
-                <ul>
-                    <li><a href="/api/health">Health Check</a></li>
-                    <li><a href="/api/course-info">Course Info (JSON)</a></li>
-                    <li><code>POST /api/chat</code> - Send messages to the chatbot</li>
-                </ul>
+                <div style="margin-top: 20px;">
+                    <p><strong>Quick Questions:</strong></p>
+                    <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+                        <button onclick="askQuestion('What is this course about?')" style="padding: 5px 10px; background: #e0f2fe; border: 1px solid #0369a1; border-radius: 15px; cursor: pointer; font-size: 12px;">What is this course about?</button>
+                        <button onclick="askQuestion('Tell me about assignments')" style="padding: 5px 10px; background: #e0f2fe; border: 1px solid #0369a1; border-radius: 15px; cursor: pointer; font-size: 12px;">Tell me about assignments</button>
+                        <button onclick="askQuestion('Explain DNA methylation')" style="padding: 5px 10px; background: #e0f2fe; border: 1px solid #0369a1; border-radius: 15px; cursor: pointer; font-size: 12px;">Explain DNA methylation</button>
+                        <button onclick="askQuestion('What papers should I read?')" style="padding: 5px 10px; background: #e0f2fe; border: 1px solid #0369a1; border-radius: 15px; cursor: pointer; font-size: 12px;">What papers should I read?</button>
+                    </div>
+                </div>
             </div>
+            
+            <script>
+                function addMessage(message, isUser = false) {
+                    const messagesDiv = document.getElementById('messages');
+                    const messageDiv = document.createElement('div');
+                    messageDiv.style.margin = '10px 0';
+                    messageDiv.style.padding = '10px';
+                    messageDiv.style.borderRadius = '5px';
+                    messageDiv.style.backgroundColor = isUser ? '#e0f2fe' : '#f8fafc';
+                    messageDiv.style.borderLeft = isUser ? '4px solid #0369a1' : '4px solid #14b8a6';
+                    
+                    if (isUser) {
+                        messageDiv.innerHTML = '<strong>You:</strong> ' + message;
+                    } else {
+                        messageDiv.innerHTML = '<strong>Assistant:</strong> ' + message.replace(/\\n/g, '<br>');
+                    }
+                    
+                    messagesDiv.appendChild(messageDiv);
+                    messagesDiv.scrollTop = messagesDiv.scrollHeight;
+                }
+                
+                async function sendMessage() {
+                    const input = document.getElementById('messageInput');
+                    const message = input.value.trim();
+                    
+                    if (!message) return;
+                    
+                    addMessage(message, true);
+                    input.value = '';
+                    
+                    try {
+                        const response = await fetch('/api/chat', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                            },
+                            body: JSON.stringify({ message: message })
+                        });
+                        
+                        const data = await response.json();
+                        addMessage(data.response);
+                    } catch (error) {
+                        addMessage('Sorry, I encountered an error. Please try again.');
+                    }
+                }
+                
+                function askQuestion(question) {
+                    document.getElementById('messageInput').value = question;
+                    sendMessage();
+                }
+                
+                // Allow Enter key to send message
+                document.getElementById('messageInput').addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter') {
+                        sendMessage();
+                    }
+                });
+                
+                // Add welcome message
+                addMessage('Welcome to FISH 510! I can help you with course content, assignments, readings, and concepts in marine epigenetics. What would you like to know?');
+            </script>
             
             <div class="api-info">
                 <h3>💡 Example Questions:</h3>
