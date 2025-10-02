@@ -37,8 +37,11 @@ llm = ChatOpenAI(
 
 embeddings = OpenAIEmbeddings(openai_api_key=os.getenv("OPENAI_API_KEY"))
 
-# Initialize ChromaDB
-client = chromadb.PersistentClient(path="./chroma_db")
+# Initialize ChromaDB (disable anonymized telemetry to avoid PostHog errors)
+client = chromadb.PersistentClient(
+    path="./chroma_db",
+    settings=Settings(anonymized_telemetry=False)
+)
 collection_name = "fish510_course_content"
 
 class CourseChatbot:
@@ -330,11 +333,20 @@ def chat():
 @app.route('/api/health', methods=['GET'])
 def health_check():
     """Health check endpoint"""
-    return jsonify({
-        "status": "healthy", 
-        "service": "FISH 510 Course Chatbot - Enhanced Version",
-        "knowledge_base_ready": chatbot.vectorstore is not None
-    })
+    try:
+        ready = bool(chatbot and getattr(chatbot, "vectorstore", None))
+        return jsonify({
+            "status": "ok", 
+            "service": "FISH 510 Course Chatbot - Enhanced Version",
+            "knowledge_base_ready": ready
+        })
+    except Exception as e:
+        logger.error(f"Health check error: {e}")
+        return jsonify({
+            "status": "ok", 
+            "service": "FISH 510 Course Chatbot - Enhanced Version",
+            "knowledge_base_ready": False
+        })
 
 @app.route('/api/startup', methods=['GET'])
 def startup_check():
@@ -342,7 +354,8 @@ def startup_check():
     return jsonify({
         "status": "starting", 
         "service": "FISH 510 Course Chatbot - Enhanced Version",
-        "message": "Initializing knowledge base, please wait..."
+        "message": "Initializing knowledge base, please wait...",
+        "knowledge_base_ready": bool(chatbot and getattr(chatbot, "vectorstore", None))
     })
 
 @app.route('/api/test-llm', methods=['GET'])
