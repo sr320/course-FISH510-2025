@@ -1,12 +1,25 @@
 """
-FISH 510 Course Chatbot - Simple Version
-Basic Flask app that works without document loading
+FISH 510 Course Chatbot - Enhanced Version
+Uses OpenAI API with RAG system for intelligent responses
 """
 
 import os
 import logging
 from flask import Flask, request, jsonify
 from flask_cors import CORS
+from dotenv import load_dotenv
+from langchain_openai import ChatOpenAI
+from langchain_community.vectorstores import Chroma
+from langchain_community.embeddings import OpenAIEmbeddings
+from langchain.chains import RetrievalQA
+from langchain.text_splitter import RecursiveCharacterTextSplitter
+from langchain_community.document_loaders import DirectoryLoader, TextLoader
+from langchain.prompts import PromptTemplate
+import chromadb
+from chromadb.config import Settings
+
+# Load environment variables
+load_dotenv()
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
@@ -15,6 +28,109 @@ logger = logging.getLogger(__name__)
 app = Flask(__name__)
 CORS(app)
 
+# Initialize OpenAI components
+llm = ChatOpenAI(
+    model="gpt-4",
+    temperature=0.1,
+    openai_api_key=os.getenv("OPENAI_API_KEY")
+)
+
+embeddings = OpenAIEmbeddings(openai_api_key=os.getenv("OPENAI_API_KEY"))
+
+# Initialize ChromaDB
+client = chromadb.PersistentClient(path="./chroma_db")
+collection_name = "fish510_course_content"
+
+class CourseChatbot:
+    def __init__(self):
+        self.vectorstore = None
+        self.qa_chain = None
+        self.setup_knowledge_base()
+        
+    def setup_knowledge_base(self):
+        """Initialize the vector store and QA chain"""
+        try:
+            # Load course documents
+            loader = DirectoryLoader(
+                "../", 
+                glob="**/*.md",
+                loader_cls=TextLoader,
+                show_progress=True
+            )
+            documents = loader.load()
+            
+            # Split documents into chunks
+            text_splitter = RecursiveCharacterTextSplitter(
+                chunk_size=1000,
+                chunk_overlap=200,
+                length_function=len,
+            )
+            texts = text_splitter.split_documents(documents)
+            
+            # Create vector store
+            self.vectorstore = Chroma.from_documents(
+                documents=texts,
+                embedding=embeddings,
+                collection_name=collection_name,
+                client=client
+            )
+            
+            # Create QA chain with custom prompt
+            prompt_template = """You are a helpful assistant for FISH 510: Marine Organism Resilience and Epigenetics, a graduate seminar course at the University of Washington. 
+
+Use the following pieces of context to answer the student's question about the course. If you don't know the answer based on the context, politely say that you don't have that information and suggest they check the course materials or contact the instructor.
+
+Context: {context}
+
+Question: {question}
+
+Answer: Provide a helpful, accurate response based on the course content. Include relevant details about:
+- Course structure and requirements
+- Weekly topics and learning objectives  
+- Assignment details and deadlines
+- Discussion guidelines
+- Research papers and readings
+- Assessment methods
+
+If the question is about a specific week or topic, reference the relevant materials and provide context about what students should focus on."""
+
+            PROMPT = PromptTemplate(
+                template=prompt_template,
+                input_variables=["context", "question"]
+            )
+            
+            self.qa_chain = RetrievalQA.from_chain_type(
+                llm=llm,
+                chain_type="stuff",
+                retriever=self.vectorstore.as_retriever(search_kwargs={"k": 5}),
+                chain_type_kwargs={"prompt": PROMPT},
+                return_source_documents=True
+            )
+            
+            logger.info(f"Knowledge base initialized with {len(texts)} document chunks")
+            
+        except Exception as e:
+            logger.error(f"Error setting up knowledge base: {e}")
+            raise
+    
+    def query(self, question):
+        """Query the chatbot with a question"""
+        try:
+            result = self.qa_chain({"query": question})
+            return {
+                "answer": result["result"],
+                "sources": [doc.metadata.get("source", "Unknown") for doc in result["source_documents"]]
+            }
+        except Exception as e:
+            logger.error(f"Error querying chatbot: {e}")
+            return {
+                "answer": "I'm sorry, I encountered an error processing your question. Please try again.",
+                "sources": []
+            }
+
+# Initialize chatbot
+chatbot = CourseChatbot()
+
 @app.route('/')
 def home():
     """Home page with course information"""
@@ -22,19 +138,30 @@ def home():
     <!DOCTYPE html>
     <html>
     <head>
-        <title>FISH 510 Course Chatbot</title>
+        <title>FISH 510 Course Chatbot - Enhanced</title>
         <style>
             body { font-family: Arial, sans-serif; margin: 40px; background: #f0f9ff; }
             .container { max-width: 800px; margin: 0 auto; background: white; padding: 30px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
             h1 { color: #0369a1; }
             .chat-box { background: #f8fafc; padding: 20px; border-radius: 8px; margin: 20px 0; }
             .api-info { background: #e0f2fe; padding: 15px; border-radius: 5px; margin: 20px 0; }
+            .enhanced { background: #dcfce7; border-left: 4px solid #16a34a; }
         </style>
     </head>
     <body>
         <div class="container">
-            <h1>🐠 FISH 510 Course Chatbot</h1>
+            <h1>🐠 FISH 510 Course Chatbot - Enhanced</h1>
             <h2>Marine Organism Resilience and Epigenetics</h2>
+            
+            <div class="enhanced">
+                <h3>🚀 Enhanced Features:</h3>
+                <ul>
+                    <li><strong>AI-Powered Responses:</strong> GPT-4 powered intelligent responses</li>
+                    <li><strong>Document Search:</strong> Searches through all course materials</li>
+                    <li><strong>Context-Aware:</strong> Understands relationships between concepts</li>
+                    <li><strong>Source Attribution:</strong> Shows which documents informed each response</li>
+                </ul>
+            </div>
             
             <div class="api-info">
                 <h3>📚 Course Information:</h3>
@@ -45,11 +172,11 @@ def home():
             </div>
             
             <div class="chat-box">
-                <h3>🤖 Chat with the Course Assistant</h3>
+                <h3>🤖 Chat with the Enhanced Course Assistant</h3>
                 <div id="chat-container">
                     <div id="messages" style="height: 300px; overflow-y: auto; border: 1px solid #ccc; padding: 10px; margin: 10px 0; background: white;"></div>
                     <div style="display: flex; gap: 10px;">
-                        <input type="text" id="messageInput" placeholder="Ask a question about the course..." style="flex: 1; padding: 10px; border: 1px solid #ccc; border-radius: 5px;">
+                        <input type="text" id="messageInput" placeholder="Ask any question about the course..." style="flex: 1; padding: 10px; border: 1px solid #ccc; border-radius: 5px;">
                         <button onclick="sendMessage()" style="padding: 10px 20px; background: #0369a1; color: white; border: none; border-radius: 5px; cursor: pointer;">Send</button>
                     </div>
                 </div>
@@ -59,14 +186,14 @@ def home():
                     <div style="display: flex; flex-wrap: wrap; gap: 10px;">
                         <button onclick="askQuestion('What is this course about?')" style="padding: 5px 10px; background: #e0f2fe; border: 1px solid #0369a1; border-radius: 15px; cursor: pointer; font-size: 12px;">What is this course about?</button>
                         <button onclick="askQuestion('Tell me about assignments')" style="padding: 5px 10px; background: #e0f2fe; border: 1px solid #0369a1; border-radius: 15px; cursor: pointer; font-size: 12px;">Tell me about assignments</button>
-                        <button onclick="askQuestion('Explain DNA methylation')" style="padding: 5px 10px; background: #e0f2fe; border: 1px solid #0369a1; border-radius: 15px; cursor: pointer; font-size: 12px;">Explain DNA methylation</button>
-                        <button onclick="askQuestion('What papers should I read?')" style="padding: 5px 10px; background: #e0f2fe; border: 1px solid #0369a1; border-radius: 15px; cursor: pointer; font-size: 12px;">What papers should I read?</button>
+                        <button onclick="askQuestion('Explain DNA methylation in marine organisms')" style="padding: 5px 10px; background: #e0f2fe; border: 1px solid #0369a1; border-radius: 15px; cursor: pointer; font-size: 12px;">Explain DNA methylation</button>
+                        <button onclick="askQuestion('What papers should I read for Week 2?')" style="padding: 5px 10px; background: #e0f2fe; border: 1px solid #0369a1; border-radius: 15px; cursor: pointer; font-size: 12px;">Week 2 readings</button>
                     </div>
                 </div>
             </div>
             
             <script>
-                function addMessage(message, isUser = false) {
+                function addMessage(message, isUser = false, sources = []) {
                     const messagesDiv = document.getElementById('messages');
                     const messageDiv = document.createElement('div');
                     messageDiv.style.margin = '10px 0';
@@ -78,7 +205,11 @@ def home():
                     if (isUser) {
                         messageDiv.innerHTML = '<strong>You:</strong> ' + message;
                     } else {
-                        messageDiv.innerHTML = '<strong>Assistant:</strong> ' + message.replace(/\\n/g, '<br>');
+                        let sourcesHtml = '';
+                        if (sources && sources.length > 0) {
+                            sourcesHtml = '<div style="margin-top: 10px; padding: 8px; background: #f1f5f9; border-radius: 3px; font-size: 12px;"><strong>Sources:</strong> ' + sources.slice(0, 3).join(', ') + '</div>';
+                        }
+                        messageDiv.innerHTML = '<strong>Assistant:</strong> ' + message.replace(/\\n/g, '<br>') + sourcesHtml;
                     }
                     
                     messagesDiv.appendChild(messageDiv);
@@ -94,6 +225,12 @@ def home():
                     addMessage(message, true);
                     input.value = '';
                     
+                    // Show typing indicator
+                    const typingDiv = document.createElement('div');
+                    typingDiv.id = 'typing';
+                    typingDiv.innerHTML = '<em>Assistant is thinking...</em>';
+                    document.getElementById('messages').appendChild(typingDiv);
+                    
                     try {
                         const response = await fetch('/api/chat', {
                             method: 'POST',
@@ -104,8 +241,10 @@ def home():
                         });
                         
                         const data = await response.json();
-                        addMessage(data.response);
+                        document.getElementById('typing').remove();
+                        addMessage(data.response, false, data.sources);
                     } catch (error) {
+                        document.getElementById('typing').remove();
                         addMessage('Sorry, I encountered an error. Please try again.');
                     }
                 }
@@ -123,18 +262,17 @@ def home():
                 });
                 
                 // Add welcome message
-                addMessage('Welcome to FISH 510! I can help you with course content, assignments, readings, and concepts in marine epigenetics. What would you like to know?');
+                addMessage('Welcome to the Enhanced FISH 510 Course Assistant! I can search through all course materials and provide intelligent responses. What would you like to know?');
             </script>
             
             <div class="api-info">
-                <h3>💡 Example Questions:</h3>
-                <p>Try asking:</p>
+                <h3>💡 Enhanced Capabilities:</h3>
                 <ul>
-                    <li>"What is this course about?"</li>
-                    <li>"Tell me about assignments"</li>
-                    <li>"What papers should I read?"</li>
-                    <li>"Explain DNA methylation"</li>
-                    <li>"How does climate change affect marine organisms?"</li>
+                    <li>Search through all course documents and readings</li>
+                    <li>Understand complex questions and concepts</li>
+                    <li>Provide detailed explanations with sources</li>
+                    <li>Connect different course topics and materials</li>
+                    <li>Answer nuanced questions about marine epigenetics</li>
                 </ul>
             </div>
         </div>
@@ -144,7 +282,7 @@ def home():
 
 @app.route('/api/chat', methods=['POST'])
 def chat():
-    """Handle chat messages with simple responses"""
+    """Handle chat messages"""
     try:
         data = request.get_json()
         question = data.get('message', '')
@@ -152,142 +290,12 @@ def chat():
         if not question:
             return jsonify({"error": "No message provided"}), 400
         
-        # Simple responses based on keywords
-        question_lower = question.lower()
-        
-        if 'course' in question_lower or 'fish 510' in question_lower:
-            response = """FISH 510: Marine Organism Resilience and Epigenetics
-
-📚 **Course Information:**
-• Graduate Seminar (2 credits)
-• Instructor: Steven Roberts
-• University: Washington
-• Semester: Fall 2025
-
-🎯 **Key Topics:**
-• DNA methylation in marine species
-• Environmental stressors and gene expression
-• Histone modifications and chromatin structure
-• Non-coding RNAs and regulation
-• Transgenerational epigenetic inheritance
-• Climate change and epigenetic responses
-• Population-level epigenetic variation
-• Methodology and techniques
-
-📖 **Course Structure:**
-10 weekly modules covering different aspects of marine epigenetics and organism resilience."""
-            
-        elif 'assignment' in question_lower or 'deadline' in question_lower:
-            response = """**Assignment Information:**
-
-📝 **Assessment Methods:**
-• Participation and Discussion (40%)
-• Literature Presentations (30%)
-• Research Synthesis Paper (30%)
-
-📅 **Important Dates:**
-• Weekly discussion posts: Due by Thursday of each week
-• Peer responses: Due by Monday of each week
-• Presentation assignments: Individual scheduling during Weeks 3-10
-• Final research synthesis paper: Due Week 10
-
-📋 **Assignment Types:**
-• Course introduction post (Week 1)
-• Environmental stressor literature review (Week 2)
-• Student-led paper presentations (Weeks 3-10)
-• Final research synthesis paper (Week 10)"""
-            
-        elif 'reading' in question_lower or 'paper' in question_lower:
-            response = """**Reading Materials:**
-
-📚 **Key Papers by Week:**
-• Week 1: Eirin-Lopez & Putnam (2019) - Marine environmental epigenetics
-• Week 2: Hofmann (2017), Kenkel & Matz (2016) - Environmental stressors
-• Week 3-4: DNA methylation and chromatin studies
-• Week 5-6: Non-coding RNAs and transgenerational inheritance
-• Week 7-8: Climate change and population variation
-• Week 9-10: Methodology and future directions
-
-📖 **Access:**
-• All papers available through course repository
-• UW Libraries electronic resources
-• Open access publications included
-
-💡 **Reading Tips:**
-• Focus on methodology and key findings
-• Note experimental approaches and limitations
-• Connect to broader marine science themes"""
-            
-        elif 'dna methylation' in question_lower or 'methylation' in question_lower:
-            response = """**DNA Methylation in Marine Species:**
-
-🧬 **Key Concepts:**
-• DNA methylation is a key epigenetic mechanism
-• Involves addition of methyl groups to cytosine bases
-• Regulates gene expression without changing DNA sequence
-• Important for environmental adaptation in marine organisms
-
-🐠 **Marine Context:**
-• Unique patterns in marine species (e.g., intragenic methylation in oysters)
-• Environmental stressors can alter methylation patterns
-• Transgenerational inheritance of methylation changes
-• Role in thermal tolerance and stress responses
-
-📊 **Research Methods:**
-• Bisulfite sequencing for methylation detection
-• Whole-genome methylation profiling
-• Correlation with gene expression patterns
-• Population-level methylation variation studies"""
-            
-        elif 'climate' in question_lower or 'warming' in question_lower:
-            response = """**Climate Change and Epigenetic Responses:**
-
-🌊 **Environmental Stressors:**
-• Ocean warming and thermal stress
-• Ocean acidification (pH changes)
-• Hypoxia and oxygen stress
-• Salinity fluctuations
-
-🧬 **Epigenetic Responses:**
-• DNA methylation changes under stress
-• Histone modifications and chromatin remodeling
-• Non-coding RNA regulation
-• Transgenerational acclimation
-
-🔬 **Research Examples:**
-• Coral bleaching and methylation patterns
-• Fish thermal tolerance inheritance
-• Population-level adaptation mechanisms
-• Long-term climate adaptation strategies
-
-📈 **Implications:**
-• Rapid adaptation potential
-• Conservation and management applications
-• Restoration strategies
-• Future research directions"""
-            
-        else:
-            response = """Welcome to the FISH 510 Course Assistant! 
-
-I can help you with information about:
-• Course structure and requirements
-• Assignment deadlines and expectations
-• Reading materials and papers
-• Key concepts in marine epigenetics
-• Climate change and organism responses
-
-Try asking about:
-- "What is this course about?"
-- "Tell me about assignments"
-- "What papers should I read?"
-- "Explain DNA methylation"
-- "How does climate change affect marine organisms?"
-
-For detailed questions about specific topics, please refer to the course materials or contact your instructor."""
+        # Get response from chatbot
+        response = chatbot.query(question)
         
         return jsonify({
-            "response": response,
-            "sources": ["Course syllabus and materials"]
+            "response": response["answer"],
+            "sources": response["sources"]
         })
         
     except Exception as e:
@@ -297,7 +305,7 @@ For detailed questions about specific topics, please refer to the course materia
 @app.route('/api/health', methods=['GET'])
 def health_check():
     """Health check endpoint"""
-    return jsonify({"status": "healthy", "service": "FISH 510 Course Chatbot (Simple Version)"})
+    return jsonify({"status": "healthy", "service": "FISH 510 Course Chatbot - Enhanced Version"})
 
 @app.route('/api/course-info', methods=['GET'])
 def course_info():
@@ -310,7 +318,14 @@ def course_info():
         "semester": "Fall 2025",
         "credits": 2,
         "format": "Graduate Seminar",
-        "version": "Simple Version (No external dependencies)",
+        "version": "Enhanced Version (OpenAI GPT-4 + RAG)",
+        "features": [
+            "AI-powered intelligent responses",
+            "Document search and retrieval",
+            "Source attribution",
+            "Context-aware conversations",
+            "Comprehensive course knowledge"
+        ],
         "topics": [
             "DNA methylation in marine species",
             "Environmental stressors and gene expression",
