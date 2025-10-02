@@ -11,4 +11,6 @@ pip install -r requirements.txt
 
 # Start the application
 echo "🚀 Starting Flask application..."
+# Index the entire repo (one level up from chatbot)
+export DOCS_DIR=".."
 python app.py
