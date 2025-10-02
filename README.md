@@ -36,10 +36,11 @@ By the end of this course, students will be able to:
 │   ├── papers/                # Key research papers
 │   ├── datasets/              # Example datasets
 │   └── tools/                 # Computational tools and scripts
-└── chatbot/                    # AI-powered course assistant
-    ├── app.py                 # Flask backend with RAG system
-    ├── frontend/              # React web interface
+└── chatbot/                    # AI-powered course assistant (DEPLOYED)
+    ├── app.py                 # Flask backend with chat interface
+    ├── frontend/              # React web interface (optional)
     ├── DEPLOYMENT.md          # Web deployment guide
+    ├── SECURITY.md            # Security best practices
     └── README.md              # Chatbot documentation
 ```
 
@@ -55,22 +56,37 @@ By the end of this course, students will be able to:
 
 ## 🤖 AI Course Assistant
 
-This course includes an AI-powered chatbot to help students with course content, assignments, and questions about marine epigenetics.
+This course includes a web-based chatbot to help students with course content, assignments, and questions about marine epigenetics.
+
+### 🚀 **Live Chatbot Available Now!**
+
+**Access the chatbot**: https://course-fish510-2025-production.up.railway.app
+
+Students can immediately start asking questions about:
+- Course content and structure
+- Assignment deadlines and requirements  
+- Reading materials and papers
+- Key concepts in marine epigenetics
+- Climate change and organism responses
 
 ### For Students
-- **Access the chatbot**: Once deployed, students can ask questions about course content, readings, and assignments
-- **Example questions**: "What is DNA methylation?", "Tell me about Week 2 readings", "What are the assignment deadlines?"
+- **Interactive Chat Interface**: Type questions and get instant responses
+- **Quick Question Buttons**: One-click access to common questions
+- **24/7 Availability**: Get help anytime, anywhere
+- **Example questions**: "What is DNA methylation?", "Tell me about assignments", "What papers should I read?"
 
 ### For Instructors
-- **Deploy the chatbot**: See `chatbot/DEPLOYMENT.md` for web deployment instructions
-- **Quick deploy**: Run `cd chatbot && ./deploy.sh` for guided deployment
-- **Student support**: The chatbot provides 24/7 assistance with common course questions
+- **Already Deployed**: The chatbot is live and ready for student use
+- **No Setup Required**: Students can access it immediately
+- **Customizable**: See `chatbot/` directory for code and customization options
+- **Student Support**: Provides 24/7 assistance with common course questions
 
 ### Features
-- AI-powered responses using course-specific knowledge
-- Real-time chat interface with marine-themed design
-- Access to all course materials, readings, and assignments
-- Source attribution for all responses
+- **Intelligent Responses**: Keyword-based system with comprehensive course knowledge
+- **Real-time Chat Interface**: Interactive web interface with marine-themed design
+- **Quick Questions**: Pre-built buttons for common student queries
+- **Reliable Operation**: No external dependencies, always available
+- **Course-Specific**: Designed specifically for FISH 510 content and requirements
 
 ---
 *University of Washington | School of Aquatic and Fishery Sciences*
