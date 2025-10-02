@@ -40,7 +40,9 @@ By the end of this week, students will be able to:
 3. What are the trade-offs between plastic responses and evolutionary adaptation to environmental stress?
 
 ## Activities
-- **Address Discussion Questions** 
+- White Boarding big concepts / Lab/Field Methods
+- Presentation assignments
+- Logistics
 
 ## Lab/Field Methods Focus
 - Experimental design for stress exposure studies
@@ -49,6 +51,7 @@ By the end of this week, students will be able to:
 
 ## Assessment
 - Participation in discussion (formative)
+- Participation in White Boarding (formative)
 
 
 ---
