@@ -1,0 +1,21 @@
+[phases.setup]
+nixPkgs = ["python311", "gcc", "g++"]
+
+[phases.install]
+cmds = [
+  "pip install --upgrade pip",
+  "pip install -r chatbot/requirements.txt"
+]
+
+[phases.build]
+cmds = [
+  "echo 'Build at repo root'",
+  "echo 'Working directory:' && pwd",
+  "echo 'Root contents:' && ls -la",
+  "echo 'Chatbot contents:' && ls -la chatbot"
+]
+
+[start]
+cmd = "python chatbot/app.py"
+
+
