@@ -128,8 +128,24 @@ If the question is about a specific week or topic, reference the relevant materi
                 "sources": []
             }
 
-# Initialize chatbot
-chatbot = CourseChatbot()
+# Initialize chatbot (non-blocking)
+chatbot = None
+
+def initialize_chatbot():
+    """Initialize chatbot in background"""
+    global chatbot
+    try:
+        chatbot = CourseChatbot()
+        logger.info("Chatbot initialized successfully")
+    except Exception as e:
+        logger.error(f"Failed to initialize chatbot: {e}")
+        chatbot = None
+
+# Start initialization in background
+import threading
+init_thread = threading.Thread(target=initialize_chatbot)
+init_thread.daemon = True
+init_thread.start()
 
 @app.route('/')
 def home():
@@ -290,6 +306,13 @@ def chat():
         if not question:
             return jsonify({"error": "No message provided"}), 400
         
+        # Check if chatbot is ready
+        if chatbot is None:
+            return jsonify({
+                "response": "The enhanced chatbot is still initializing. Please wait a moment and try again, or use the free version at: https://course-fish510-2025-production.up.railway.app",
+                "sources": []
+            })
+        
         # Get response from chatbot
         response = chatbot.query(question)
         
@@ -305,7 +328,20 @@ def chat():
 @app.route('/api/health', methods=['GET'])
 def health_check():
     """Health check endpoint"""
-    return jsonify({"status": "healthy", "service": "FISH 510 Course Chatbot - Enhanced Version"})
+    return jsonify({
+        "status": "healthy", 
+        "service": "FISH 510 Course Chatbot - Enhanced Version",
+        "knowledge_base_ready": chatbot.vectorstore is not None
+    })
+
+@app.route('/api/startup', methods=['GET'])
+def startup_check():
+    """Startup check endpoint - responds immediately"""
+    return jsonify({
+        "status": "starting", 
+        "service": "FISH 510 Course Chatbot - Enhanced Version",
+        "message": "Initializing knowledge base, please wait..."
+    })
 
 @app.route('/api/course-info', methods=['GET'])
 def course_info():
