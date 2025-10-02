@@ -15,6 +15,70 @@ logger = logging.getLogger(__name__)
 app = Flask(__name__)
 CORS(app)
 
+@app.route('/')
+def home():
+    """Home page with course information"""
+    return """
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>FISH 510 Course Chatbot</title>
+        <style>
+            body { font-family: Arial, sans-serif; margin: 40px; background: #f0f9ff; }
+            .container { max-width: 800px; margin: 0 auto; background: white; padding: 30px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+            h1 { color: #0369a1; }
+            .chat-box { background: #f8fafc; padding: 20px; border-radius: 8px; margin: 20px 0; }
+            .api-info { background: #e0f2fe; padding: 15px; border-radius: 5px; margin: 20px 0; }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>🐠 FISH 510 Course Chatbot</h1>
+            <h2>Marine Organism Resilience and Epigenetics</h2>
+            
+            <div class="api-info">
+                <h3>📚 Course Information:</h3>
+                <p><strong>Instructor:</strong> Steven Roberts</p>
+                <p><strong>University:</strong> University of Washington</p>
+                <p><strong>Semester:</strong> Fall 2025</p>
+                <p><strong>Credits:</strong> 2</p>
+            </div>
+            
+            <div class="chat-box">
+                <h3>🤖 Chat with the Course Assistant</h3>
+                <p>Ask questions about:</p>
+                <ul>
+                    <li>Course content and structure</li>
+                    <li>Assignment deadlines and requirements</li>
+                    <li>Reading materials and papers</li>
+                    <li>Key concepts in marine epigenetics</li>
+                    <li>Climate change and organism responses</li>
+                </ul>
+                
+                <p><strong>API Endpoints:</strong></p>
+                <ul>
+                    <li><a href="/api/health">Health Check</a></li>
+                    <li><a href="/api/course-info">Course Info (JSON)</a></li>
+                    <li><code>POST /api/chat</code> - Send messages to the chatbot</li>
+                </ul>
+            </div>
+            
+            <div class="api-info">
+                <h3>💡 Example Questions:</h3>
+                <p>Try asking:</p>
+                <ul>
+                    <li>"What is this course about?"</li>
+                    <li>"Tell me about assignments"</li>
+                    <li>"What papers should I read?"</li>
+                    <li>"Explain DNA methylation"</li>
+                    <li>"How does climate change affect marine organisms?"</li>
+                </ul>
+            </div>
+        </div>
+    </body>
+    </html>
+    """
+
 @app.route('/api/chat', methods=['POST'])
 def chat():
     """Handle chat messages with simple responses"""
