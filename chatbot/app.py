@@ -13,7 +13,7 @@ from langchain_community.vectorstores import Chroma
 from langchain_openai import OpenAIEmbeddings
 from langchain.chains import RetrievalQA
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain_community.document_loaders import DirectoryLoader, TextLoader
+from langchain_community.document_loaders import DirectoryLoader, TextLoader, PyPDFLoader
 from langchain.prompts import PromptTemplate
 import chromadb
 from chromadb.config import Settings
@@ -27,6 +27,9 @@ logger = logging.getLogger(__name__)
 
 app = Flask(__name__)
 CORS(app)
+
+# Configurable documents directory (set via DOCS_DIR; start.sh defaults this to repo root)
+DOCS_DIR = os.getenv("DOCS_DIR", ".")
 
 # Initialize OpenAI components
 llm = ChatOpenAI(
@@ -53,19 +56,34 @@ class CourseChatbot:
     def setup_knowledge_base(self):
         """Initialize the vector store and QA chain"""
         try:
-            # Load course documents
-            loader = DirectoryLoader(
-                "../", 
+            # Load course documents (Markdown + PDFs) from the configured directory
+            logger.info(f"Loading documents from DOCS_DIR={DOCS_DIR}")
+            loader_md = DirectoryLoader(
+                DOCS_DIR,
                 glob="**/*.md",
                 loader_cls=TextLoader,
                 show_progress=True
             )
-            documents = loader.load()
+            loader_pdf = DirectoryLoader(
+                DOCS_DIR,
+                glob="**/*.pdf",
+                loader_cls=PyPDFLoader,
+                show_progress=True
+            )
+            md_docs = loader_md.load()
+            pdf_docs = loader_pdf.load()
+            documents = md_docs + pdf_docs
+            logger.info(f"Loaded {len(md_docs)} markdown and {len(pdf_docs)} PDFs from {DOCS_DIR}")
+            
+            # Safety cap to avoid excessive indexing in constrained environments
+            if len(documents) > 2000:
+                documents = documents[:2000]
+                logger.info("Capped documents to 2000 for performance")
             
             # Split documents into chunks
             text_splitter = RecursiveCharacterTextSplitter(
-                chunk_size=1000,
-                chunk_overlap=200,
+                chunk_size=800,
+                chunk_overlap=160,
                 length_function=len,
             )
             texts = text_splitter.split_documents(documents)
@@ -105,7 +123,7 @@ If the question is about a specific week or topic, reference the relevant materi
             self.qa_chain = RetrievalQA.from_chain_type(
                 llm=llm,
                 chain_type="stuff",
-                retriever=self.vectorstore.as_retriever(search_kwargs={"k": 5}),
+                retriever=self.vectorstore.as_retriever(search_kwargs={"k": 4}),
                 chain_type_kwargs={"prompt": PROMPT},
                 return_source_documents=True
             )
@@ -114,7 +132,9 @@ If the question is about a specific week or topic, reference the relevant materi
             
         except Exception as e:
             logger.error(f"Error setting up knowledge base: {e}")
-            raise
+            # Do not raise; allow app to start and report not-ready
+            self.vectorstore = None
+            self.qa_chain = None
     
     def query(self, question):
         """Query the chatbot with a question"""
@@ -312,7 +332,7 @@ def chat():
             return jsonify({"error": "No message provided"}), 400
         
         # Check if chatbot is ready
-        if chatbot is None:
+        if chatbot is None or chatbot.qa_chain is None:
             return jsonify({
                 "response": "The enhanced chatbot is still initializing. Please wait a moment and try again, or use the free version at: https://course-fish510-2025-production.up.railway.app",
                 "sources": []
