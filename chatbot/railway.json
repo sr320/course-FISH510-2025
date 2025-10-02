@@ -5,7 +5,7 @@
     "watchPatterns": ["**"]
   },
   "deploy": {
-    "startCommand": "cd /app && DOCS_DIR=/app python app.py",
+    "startCommand": "python app.py",
     "healthcheckPath": "/api/health",
     "healthcheckTimeout": 1200,
     "restartPolicyType": "ON_FAILURE",
