@@ -112,30 +112,52 @@ class CourseChatbot:
                 logger.error(f"DOCS_DIR does not exist: {DOCS_DIR}")
                 raise FileNotFoundError(f"Directory not found: {DOCS_DIR}")
             
-            # Load documents (DirectoryLoader in this version doesn't support exclude parameter)
-            loader_md = DirectoryLoader(
-                DOCS_DIR,
-                glob="**/*.md",
-                loader_cls=TextLoader,
-                show_progress=True
-            )
-            loader_pdf = DirectoryLoader(
-                DOCS_DIR,
-                glob="**/*.pdf",
-                loader_cls=PyPDFLoader,
-                show_progress=True
-            )
-            logger.info("Loading Markdown files...")
-            md_docs = loader_md.load()
-            logger.info("Loading PDF files...")
-            pdf_docs = loader_pdf.load()
-            
-            # Filter out system paths from loaded documents
-            md_docs = [doc for doc in md_docs if not any(exclude in doc.metadata.get('source', '') for exclude in ['/usr/', 'site-packages', 'dist-packages'])]
-            pdf_docs = [doc for doc in pdf_docs if not any(exclude in doc.metadata.get('source', '') for exclude in ['/usr/', 'site-packages', 'dist-packages'])]
-            
-            documents = md_docs + pdf_docs
-            logger.info(f"Loaded {len(md_docs)} markdown and {len(pdf_docs)} PDFs from {DOCS_DIR} (after filtering system files)")
+            # Restrict to course content only: resources/, weeks/, syllabus.md, schedule.md (under repo root)
+            base_dir = os.path.abspath(DOCS_DIR)
+            resources_dir = os.path.join(base_dir, "resources")
+            weeks_dir = os.path.join(base_dir, "weeks")
+            syllabus_file = os.path.join(base_dir, "syllabus.md")
+            schedule_file = os.path.join(base_dir, "schedule.md")
+
+            documents = []
+            md_count = 0
+            pdf_count = 0
+
+            # Load Markdown and PDFs from resources/
+            if os.path.exists(resources_dir):
+                logger.info(f"Loading course docs from: {resources_dir}")
+                res_md_loader = DirectoryLoader(resources_dir, glob="**/*.md", loader_cls=TextLoader, show_progress=True)
+                res_pdf_loader = DirectoryLoader(resources_dir, glob="**/*.pdf", loader_cls=PyPDFLoader, show_progress=True)
+                res_md = res_md_loader.load()
+                res_pdf = res_pdf_loader.load()
+                documents.extend(res_md)
+                documents.extend(res_pdf)
+                md_count += len(res_md)
+                pdf_count += len(res_pdf)
+
+            # Load Markdown and PDFs from weeks/
+            if os.path.exists(weeks_dir):
+                logger.info(f"Loading course docs from: {weeks_dir}")
+                weeks_md_loader = DirectoryLoader(weeks_dir, glob="**/*.md", loader_cls=TextLoader, show_progress=True)
+                weeks_pdf_loader = DirectoryLoader(weeks_dir, glob="**/*.pdf", loader_cls=PyPDFLoader, show_progress=True)
+                weeks_md = weeks_md_loader.load()
+                weeks_pdf = weeks_pdf_loader.load()
+                documents.extend(weeks_md)
+                documents.extend(weeks_pdf)
+                md_count += len(weeks_md)
+                pdf_count += len(weeks_pdf)
+
+            # Load single files: syllabus.md and schedule.md
+            for single in [syllabus_file, schedule_file]:
+                if os.path.exists(single):
+                    try:
+                        single_doc = TextLoader(single).load()
+                        documents.extend(single_doc)
+                        md_count += len(single_doc)
+                    except Exception:
+                        logger.warning(f"Failed to load file: {single}")
+
+            logger.info(f"Loaded {md_count} markdown and {pdf_count} PDFs from course content only")
             
             # Safety cap to avoid excessive indexing in constrained environments
             if len(documents) > 2000:
