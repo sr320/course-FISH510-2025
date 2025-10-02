@@ -11,6 +11,7 @@ from dotenv import load_dotenv
 from langchain_openai import ChatOpenAI
 from langchain_community.vectorstores import Chroma
 from langchain_openai import OpenAIEmbeddings
+from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain.chains import RetrievalQA
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_community.document_loaders import DirectoryLoader, TextLoader, PyPDFLoader
@@ -45,14 +46,28 @@ else:
 DOCS_DIR = os.getenv("DOCS_DIR", default_docs_dir)
 logger.info(f"DOCS_DIR set to: {DOCS_DIR} (resolves to {os.path.abspath(DOCS_DIR)})")
 
-# Initialize OpenAI components
-llm = ChatOpenAI(
-    model="gpt-4",
-    temperature=0.1,
-    openai_api_key=os.getenv("OPENAI_API_KEY")
-)
+# Initialize embeddings with fallback to local model
+use_openai = bool(os.getenv("OPENAI_API_KEY"))
+if use_openai:
+    logger.info("Using OpenAI embeddings and GPT-4")
+    try:
+        embeddings = OpenAIEmbeddings(openai_api_key=os.getenv("OPENAI_API_KEY"))
+        llm = ChatOpenAI(
+            model="gpt-4",
+            temperature=0.1,
+            openai_api_key=os.getenv("OPENAI_API_KEY")
+        )
+    except Exception as e:
+        logger.warning(f"Failed to initialize OpenAI, falling back to local models: {e}")
+        use_openai = False
 
-embeddings = OpenAIEmbeddings(openai_api_key=os.getenv("OPENAI_API_KEY"))
+if not use_openai:
+    logger.info("Using local HuggingFace embeddings (no OpenAI)")
+    embeddings = HuggingFaceEmbeddings(
+        model_name="sentence-transformers/all-MiniLM-L6-v2",
+        model_kwargs={'device': 'cpu'}
+    )
+    llm = None  # Will use simple retrieval without LLM
 
 # Initialize ChromaDB (disable anonymized telemetry to avoid PostHog errors)
 client = chromadb.PersistentClient(
@@ -167,15 +182,20 @@ If the question is about a specific week or topic, reference the relevant materi
             )
             
             logger.info("Creating QA chain...")
-            self.qa_chain = RetrievalQA.from_chain_type(
-                llm=llm,
-                chain_type="stuff",
-                retriever=self.vectorstore.as_retriever(search_kwargs={"k": 4}),
-                chain_type_kwargs={"prompt": PROMPT},
-                return_source_documents=True
-            )
-            
-            logger.info(f"✅ Knowledge base initialized successfully with {len(texts)} document chunks")
+            if llm:
+                # Full LLM-powered QA chain
+                self.qa_chain = RetrievalQA.from_chain_type(
+                    llm=llm,
+                    chain_type="stuff",
+                    retriever=self.vectorstore.as_retriever(search_kwargs={"k": 4}),
+                    chain_type_kwargs={"prompt": PROMPT},
+                    return_source_documents=True
+                )
+                logger.info(f"✅ Knowledge base initialized successfully with {len(texts)} document chunks (OpenAI GPT-4)")
+            else:
+                # Simple retrieval without LLM (fallback mode)
+                self.qa_chain = self.vectorstore.as_retriever(search_kwargs={"k": 4})
+                logger.info(f"✅ Knowledge base initialized successfully with {len(texts)} document chunks (Local embeddings, no LLM)")
             
         except Exception as e:
             logger.error(f"Error setting up knowledge base: {e}")
@@ -187,12 +207,28 @@ If the question is about a specific week or topic, reference the relevant materi
         """Query the chatbot with a question"""
         try:
             logger.info(f"Querying chatbot with question: {question}")
-            result = self.qa_chain({"query": question})
-            logger.info(f"Got result from LLM: {result['result'][:200]}...")
-            return {
-                "answer": result["result"],
-                "sources": [doc.metadata.get("source", "Unknown") for doc in result["source_documents"]]
-            }
+            
+            if llm and hasattr(self.qa_chain, '__call__'):
+                # Full LLM-powered response
+                result = self.qa_chain({"query": question})
+                logger.info(f"Got result from LLM: {result['result'][:200]}...")
+                return {
+                    "answer": result["result"],
+                    "sources": [doc.metadata.get("source", "Unknown") for doc in result["source_documents"]]
+                }
+            else:
+                # Fallback: retrieval-only mode (no LLM)
+                docs = self.qa_chain.get_relevant_documents(question)
+                logger.info(f"Retrieved {len(docs)} relevant documents (no LLM)")
+                
+                # Combine document content
+                context = "\n\n".join([doc.page_content[:500] for doc in docs[:3]])
+                sources = [doc.metadata.get("source", "Unknown") for doc in docs]
+                
+                return {
+                    "answer": f"Here's what I found in the course materials:\n\n{context}\n\n(Note: Running in local mode without GPT-4. For more intelligent responses, OpenAI API key needed.)",
+                    "sources": sources
+                }
         except Exception as e:
             logger.error(f"Error querying chatbot: {e}")
             return {
