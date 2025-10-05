@@ -52,8 +52,7 @@ By the end of this week, students will be able to:
 
 ### Video Summary
 
-[▶️ Watch video](http://gannet.fish.washington.edu/seashell/snaps/W3-Marine_Epigenetics.mp4)
-
+[<img src="thumbnail.png" alt="▶️ Watch video" width="300"/>](http://gannet.fish.washington.edu/seashell/snaps/W3-Marine_Epigenetics.mp4)
 
 ## Assessment
 

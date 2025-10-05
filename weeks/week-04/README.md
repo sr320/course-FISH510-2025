@@ -4,12 +4,11 @@ DNA in eukaryotic cells is packaged with proteins called histones into a complex
 
 ## Learning Objectives
 
-By the end of this week, students will be able to:
-- Explain the role of histone modifications (e.g., acetylation, methylation, phosphorylation) in regulating chromatin accessibility.
-- Describe mechanisms of chromatin remodeling and how they influence gene expression in marine organisms.
-- Interpret primary literature linking environmental stressors (e.g., temperature, pH, salinity) to histone modification patterns.
-- Evaluate experimental approaches for detecting and quantifying histone modifications (e.g., ChIP-seq, mass spectrometry).
-- Discuss the potential role of epigenetic memory in marine taxa resilience and acclimatization.
+By the end of this week, students will be able to: 
+- Explain the role of histone modifications (e.g., acetylation, methylation, phosphorylation) in regulating chromatin accessibility. 
+- Describe mechanisms of chromatin remodeling and how they influence gene expression in marine organisms. 
+- Interpret primary literature linking environmental stressors (e.g., temperature, pH, salinity) to histone modification patterns. 
+- Evaluate experimental approaches for detecting and quantifying histone modifications (e.g., ChIP-seq, mass spectrometry). - Discuss the potential role of epigenetic memory in marine taxa resilience and acclimatization.
 
 ------------------------------------------------------------------------
 
@@ -24,7 +23,7 @@ By the end of this week, students will be able to:
 
 ## Required Readings
 
--   [González‐Romero, R., Suárez-Ulloa, V., Rodríguez-Casariego, J. A., García‐Souto, D., Díaz‐Hernández, G., Smith, A., … & Eirín‐López, J. M. (2017). [Effects of florida red tides on histone variant expression and dna methylation in the eastern oyster crassostrea virginica. Aquatic Toxicology, 186, 196-204.](1-s2.0-S0166445X17300760-am.pdf) 
+-   [González‐Romero, R., Suárez-Ulloa, V., Rodríguez-Casariego, J. A., García‐Souto, D., Díaz‐Hernández, G., Smith, A., … & Eirín‐López, J. M. (2017). Effects of florida red tides on histone variant expression and dna methylation in the eastern oyster crassostrea virginica. Aquatic Toxicology, 186, 196-204.](1-s2.0-S0166445X17300760-am.pdf)
 
 ## Optional Reading
 
@@ -34,10 +33,10 @@ By the end of this week, students will be able to:
 
 ## Discussion Questions
 
-1. How do histone modifications interact with other layers of epigenetic regulation (e.g., DNA methylation, ncRNA) to influence gene expression?
-2. In what ways might chromatin remodeling contribute to phenotypic plasticity and environmental resilience in marine species?
-3. What experimental or analytical challenges exist for studying histone modifications in non-model marine taxa?
-4. How could insights from histone modification research inform conservation and aquaculture strategies?
+1.  How do histone modifications interact with other layers of epigenetic regulation (e.g., DNA methylation, ncRNA) to influence gene expression?
+2.  In what ways might chromatin remodeling contribute to phenotypic plasticity and environmental resilience in marine species?
+3.  What experimental or analytical challenges exist for studying histone modifications in non-model marine taxa?
+4.  How could insights from histone modification research inform conservation and aquaculture strategies?
 
 ------------------------------------------------------------------------
 
@@ -50,7 +49,9 @@ By the end of this week, students will be able to:
 
 ## Resources
 
-- [supplement](week-04-supplement.md)
+-   [supplement](week-04-supplement.md)
+
+[<img src="thumbnail.png" alt="▶️ Watch video" width="300"/>](http://gannet.fish.washington.edu/seashell/snaps/Marine_Epigenetics.mp4)
 
 ## Assessment
 

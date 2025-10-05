@@ -43,7 +43,9 @@ By the end of this week, students will be able to: - Define epigenetics and its 
 
 ### Video Summary
 
-[▶️ Watch video](http://gannet.fish.washington.edu/seashell/snaps/Marine_Epigenetics.mp4)
+
+[<img src="thumbnail.png" alt="▶️ Watch video" width="300"/>](http://gannet.fish.washington.edu/seashell/snaps/Marine_Epigenetics.mp4)
+
 
 ## Assessment
 
