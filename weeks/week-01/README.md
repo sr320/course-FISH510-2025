@@ -41,6 +41,18 @@ By the end of this week, students will be able to:
 - [Epigentics Explainer : YouTube](https://www.youtube.com/embed/MD3Fc0XOjWk)
 - [Paper audio summary](paper-summary.mp3)
 
+
+### Video Summary
+
+<video width="640" height="360" controls>
+  <source src="Marine_Epigenetics.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+
+
+
+
 ## Assessment
 - Address Discussion Questions (You can do in 1 post; category "Course Discussion")
 - GitHub Discussions introduction post (5% of final grade) (In "Research Connection")

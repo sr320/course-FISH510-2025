@@ -48,6 +48,14 @@ By the end of this week, students will be able to:
 -   Presentation assignments
 -   Logistics
 
+
+### Video Summary
+
+<video width="640" height="360" controls>
+  <source src="Marine_Epigenetics.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
 ## Lab/Field Methods Focus
 
 -   Experimental design for stress exposure studies
