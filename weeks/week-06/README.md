@@ -16,8 +16,8 @@ By the end of this week, students will be able to:
    - Implications for adaptation, plasticity, and resilience  
 
 ## Required Readings
-- Burggren, W. W. (2016). Epigenetic inheritance and its role in evolutionary biology: Re-evaluation and new perspectives. Biological Reviews, 91 (1), 377–411.  
-- Venney CJ, Anastasiadi D, Wellenreuther M, Bernatchez L. The Evolutionary Complexities of DNA Methylation in Animals: From Plasticity to Genetic Evolution. Genome Biol Evol. 2023 Dec 1;15(12):evad216. doi: 10.1093/gbe/evad216. PMID: 38015807; PMCID: PMC10701099.  
+- [Burggren, W. W. (2016). Epigenetic inheritance and its role in evolutionary biology: Re-evaluation and new perspectives. Biological Reviews, 91 (1), 377–411.](biology-05-00024.pdf)  
+- [Venney CJ, Anastasiadi D, Wellenreuther M, Bernatchez L. The Evolutionary Complexities of DNA Methylation in Animals: From Plasticity to Genetic Evolution. Genome Biol Evol. 2023 Dec 1;15(12):evad216. doi: 10.1093/gbe/evad216. PMID: 38015807; PMCID: PMC10701099.](evad216.pdf)  
 
 
 ## Optional Readings
