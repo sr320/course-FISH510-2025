@@ -2,7 +2,11 @@
 
 ## Learning Objectives
 
-By the end of this week, students will be able to: - Identify major environmental stressors affecting marine organisms - Understand how environmental factors influence gene expression patterns - Analyze experimental approaches for studying stress responses - Evaluate the role of epigenetics in stress adaptation
+By the end of this week, students will be able to:
+- Identify major environmental stressors affecting marine organisms
+- Understand how environmental factors influence gene expression patterns
+- Analyze experimental approaches for studying stress responses
+- Evaluate the role of epigenetics in stress adaptation
 
 ## Key Topics
 
