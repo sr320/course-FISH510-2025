@@ -50,10 +50,9 @@ By the end of this week, students will be able to:
 
 ### Video Summary
 
-<video width="640" height="360" controls>
-  <source src="Marine_Epigenetics.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+### Video Summary
+
+[▶️ Watch video](http://gannet.fish.washington.edu/seashell/snaps/W3-Marine_Epigenetics.mp4)
 
 
 ## Assessment
