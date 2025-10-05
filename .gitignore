@@ -2,7 +2,6 @@
 .Rhistory
 .RData
 .Ruserdata
-
 # Chatbot security
 chatbot/.env
 chatbot/.env.local
@@ -12,3 +11,4 @@ chatbot/venv/
 chatbot/__pycache__/
 chatbot/frontend/node_modules/
 chatbot/frontend/build/
+.DS_Store
