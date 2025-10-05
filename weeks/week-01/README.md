@@ -43,11 +43,11 @@ By the end of this week, students will be able to: - Define epigenetics and its 
 
 ### Video Summary
 
-[▶️ Watch video](Marine_Epigenetics.mp4)
+[▶️ Watch video](http://gannet.fish.washington.edu/seashell/snaps/Marine_Epigenetics.mp4)
 
 ## Assessment
 
--   Address Discussion Questions (You can do in 1 post; category "Course Discussion")
+-   Address Discussion Questions - category "Course Discussion")
 -   GitHub Discussions introduction post (5% of final grade) (In "Research Connection")
 -   Engagement with peer posts (formative)
 

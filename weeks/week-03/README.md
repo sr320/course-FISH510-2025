@@ -48,6 +48,14 @@ By the end of this week, students will be able to:
 -   **Methods Workshop**: As time allows - introduction to bisulfite sequencing data analysis
 -   **Data Exploration**: Examine published methylation datasets
 
+### Video Summary
+
+<video width="640" height="360" controls>
+  <source src="Marine_Epigenetics.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+
 ## Assessment
 
 -   Student presentation (15% of final grade)

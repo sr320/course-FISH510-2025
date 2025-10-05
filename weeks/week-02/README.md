@@ -51,10 +51,7 @@ By the end of this week, students will be able to:
 
 ### Video Summary
 
-<video width="640" height="360" controls>
-  <source src="Marine_Epigenetics.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+[▶️ Watch video](http://gannet.fish.washington.edu/seashell/snaps/Coral_s_Epigenetic_Toolkit.mp4)
 
 ## Lab/Field Methods Focus
 
