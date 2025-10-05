@@ -48,7 +48,7 @@ By the end of this week, students will be able to:
 -   **Methods Workshop**: As time allows - introduction to bisulfite sequencing data analysis
 -   **Data Exploration**: Examine published methylation datasets
 
-### Video Summary
+
 
 ### Video Summary
 
