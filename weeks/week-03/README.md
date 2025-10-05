@@ -4,13 +4,13 @@
 
 By the end of this week, students will be able to:
 
-\- Understand DNA methylation mechanisms and patterns in marine organisms
+- Understand DNA methylation mechanisms and patterns in marine organisms
 
-\- Compare methylation systems across different marine taxa
+- Compare methylation systems across different marine taxa
 
-\- Evaluate methods for studying DNA methylation
+- Evaluate methods for studying DNA methylation
 
-\- Analyze the functional significance of methylation changes
+- Analyze the functional significance of methylation changes
 
 ## Key Topics
 

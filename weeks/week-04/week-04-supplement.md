@@ -6,10 +6,10 @@ Chromatin is the complex of DNA and proteins that packages genetic material in t
 
 ## 1. Chromatin Organization
 
--   **Nucleosome:** The basic unit of chromatin; \~147 base pairs of DNA wrapped around an octamer of histone proteins (two each of H2A, H2B, H3, and H4).\
--   **Linker DNA and H1:** The linker histone H1 binds between nucleosomes, aiding higher-order folding.\
--   **Chromatin states:**\
--   **Euchromatin** – loosely packed, transcriptionally active.\
+-   **Nucleosome:** The basic unit of chromatin; \~147 base pairs of DNA wrapped around an octamer of histone proteins (two each of H2A, H2B, H3, and H4).
+-   **Linker DNA and H1:** The linker histone H1 binds between nucleosomes, aiding higher-order folding.
+-   **Chromatin states:**
+-   **Euchromatin** – loosely packed, transcriptionally active.
 -   **Heterochromatin** – tightly packed, transcriptionally silent.
 
 ------------------------------------------------------------------------
@@ -32,16 +32,16 @@ Histone proteins have flexible **N-terminal tails** that can be chemically modif
 
 Histone modifications act as a **“histone code”**, interpreted by reader proteins that recruit other factors:
 
--   **Writers** add modifications (e.g., HATs, HMTs)\
--   **Erasers** remove them (e.g., HDACs, demethylases)\
+-   **Writers** add modifications (e.g., HATs, HMTs)
+-   **Erasers** remove them (e.g., HDACs, demethylases)
 -   **Readers** recognize marks and mediate effects (e.g., bromodomains bind acetyl-lysine)
 
 ------------------------------------------------------------------------
 
 ## 4. Impact on Gene Regulation
 
--   **Open chromatin (euchromatin)** allows transcription factors and RNA polymerase to bind DNA.\
--   **Closed chromatin (heterochromatin)** restricts access, silencing gene expression.\
+-   **Open chromatin (euchromatin)** allows transcription factors and RNA polymerase to bind DNA.
+-   **Closed chromatin (heterochromatin)** restricts access, silencing gene expression.
 -   These modifications are **dynamic and reversible**, enabling rapid regulation in response to environmental or developmental cues.
 
 ------------------------------------------------------------------------
