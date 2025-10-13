@@ -15,11 +15,11 @@ By the end of this week, students will be able to:
 
 ## Required Readings
 - [Yévenes M, Gallardo-Escárate C, Gajardo G. Epigenetic variation mediated by lncRNAs accounts for adaptive genomic differentiation of the endemic blue mussel Mytiluschilensis. Heliyon. 2023 Dec 14;10(1):e23695. doi: 10.1016/j.heliyon.2023.e23695. PMID: 38205306; PMCID: PMC10776947.](lncRNA-mussel.pdf)
+- [Zhu, Y., Liao, X., Han, T., Chen, J.-Y., He, C., & Lu, Z. (2022). Symbiodiniaceae microRNAs and their targeting sites in coral holobionts: A transcriptomics-based exploration. Genomics, 114(4), 110404.](Zhu-et-al-2022.pdf) https://doi.org/10.1016/j.ygeno.2022.110404
+- [Zheng, Z., Xu, Z., Cai, C., Liao, Y., Yang, C., Du, X., Huang, R., & Deng, Y. (2022). Circulating exosome miRNA, is it the novel nutrient molecule through cross-kingdom regulation mediated by food chain transmission from microalgae to bivalve? Comparative Biochemistry and Physiology Part D: Genomics and Proteomics, 43, 101004.](Zheng-et-al-2022.pdf) https://doi.org/10.1016/j.cbd.2022.101004
 
 ## Optional Readings
 - [Non-coding RNA Repertoire in Reef-Building Corals. Jill Ashey, Javier A. Rodriguez-Casariego, Kathleen M. Durkin, Zachary Bengtsson, Samuel J. White, Ariana S. Huffmyer, Danielle M. Becker, Jose M. Eirin-Lopez, Hollie M. Putnam, Steven B. Roberts bioRxiv 2025.03.15.643469](2025.03.15.643469v1.full.pdf) doi: https://doi.org/10.1101/2025.03.15.643469
-- [Zhu, Y., Liao, X., Han, T., Chen, J.-Y., He, C., & Lu, Z. (2022). Symbiodiniaceae microRNAs and their targeting sites in coral holobionts: A transcriptomics-based exploration. Genomics, 114(4), 110404.](Zhu-et-al-2022.pdf) https://doi.org/10.1016/j.ygeno.2022.110404
-- [Zheng, Z., Xu, Z., Cai, C., Liao, Y., Yang, C., Du, X., Huang, R., & Deng, Y. (2022). Circulating exosome miRNA, is it the novel nutrient molecule through cross-kingdom regulation mediated by food chain transmission from microalgae to bivalve? Comparative Biochemistry and Physiology Part D: Genomics and Proteomics, 43, 101004.](Zheng-et-al-2022.pdf) https://doi.org/10.1016/j.cbd.2022.101004
 
 ## Discussion Questions
 1. How do non-coding RNAs contribute to organismal plasticity in variable marine environments?
