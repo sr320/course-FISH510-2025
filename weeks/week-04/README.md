@@ -17,6 +17,12 @@ By the end of this week, students will be able to:\
 
 -   [González‐Romero, R., Suárez-Ulloa, V., Rodríguez-Casariego, J. A., García‐Souto, D., Díaz‐Hernández, G., Smith, A., … & Eirín‐López, J. M. (2017). Effects of florida red tides on histone variant expression and dna methylation in the eastern oyster crassostrea virginica. Aquatic Toxicology, 186, 196-204.](1-s2.0-S0166445X17300760-am.pdf)
 
+## Student Presenter
+
+**Chris Mantegna**
+
+Papers to be presented: TBD
+
 ## Optional Reading
 
 -   [Rivera-Casas, C., González‐Romero, R., Garduño, R. A., Cheema, M. S., Ausió, J., & Eirín‐López, J. M. (2017). Molecular and biochemical methods useful for the epigenetic characterization of chromatin-associated proteins in bivalve molluscs. Frontiers in Physiology, 8](fphys-08-00490.pdf). <https://doi.org/10.3389/fphys.2017.00490>

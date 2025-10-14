@@ -11,6 +11,12 @@ By the end of this week, students will be able to:
 ## Required Readings
 - [Readings to be assigned]
 
+## Student Presenter
+
+**Celeste Valdivia**
+
+Papers to be presented: TBD
+
 ## Discussion Questions
 1. [Discussion questions to be developed]
 

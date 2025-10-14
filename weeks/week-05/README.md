@@ -18,6 +18,12 @@ By the end of this week, students will be able to:
 - [Zhu, Y., Liao, X., Han, T., Chen, J.-Y., He, C., & Lu, Z. (2022). Symbiodiniaceae microRNAs and their targeting sites in coral holobionts: A transcriptomics-based exploration. Genomics, 114(4), 110404.](Zhu-et-al-2022.pdf) https://doi.org/10.1016/j.ygeno.2022.110404
 - [Zheng, Z., Xu, Z., Cai, C., Liao, Y., Yang, C., Du, X., Huang, R., & Deng, Y. (2022). Circulating exosome miRNA, is it the novel nutrient molecule through cross-kingdom regulation mediated by food chain transmission from microalgae to bivalve? Comparative Biochemistry and Physiology Part D: Genomics and Proteomics, 43, 101004.](Zheng-et-al-2022.pdf) https://doi.org/10.1016/j.cbd.2022.101004
 
+## Student Presenter
+
+**Kathleen Durkin**
+
+Papers to be presented: Listed in Required Readings above
+
 ## Optional Readings
 - [Non-coding RNA Repertoire in Reef-Building Corals. Jill Ashey, Javier A. Rodriguez-Casariego, Kathleen M. Durkin, Zachary Bengtsson, Samuel J. White, Ariana S. Huffmyer, Danielle M. Becker, Jose M. Eirin-Lopez, Hollie M. Putnam, Steven B. Roberts bioRxiv 2025.03.15.643469](2025.03.15.643469v1.full.pdf) doi: https://doi.org/10.1101/2025.03.15.643469
 
