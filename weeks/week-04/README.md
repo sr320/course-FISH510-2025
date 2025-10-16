@@ -17,6 +17,10 @@ By the end of this week, students will be able to:\
 
 -   [González‐Romero, R., Suárez-Ulloa, V., Rodríguez-Casariego, J. A., García‐Souto, D., Díaz‐Hernández, G., Smith, A., … & Eirín‐López, J. M. (2017). Effects of florida red tides on histone variant expression and dna methylation in the eastern oyster crassostrea virginica. Aquatic Toxicology, 186, 196-204.](1-s2.0-S0166445X17300760-am.pdf)
 
+-   [Sol Dourdin et al. (2024). Ancestors' Gift: Parental Early Exposure to the Environmentally Realistic Pesticide Mixture Drives O.](Sol.Dourdin.et.al.-.2024.-.Ancestors.Gift.Parental.Early.Exposure.to.the.Environmentally.Realistic.Pesticide.Mixture.Drives.O.pdf)
+
+-   [Chatterjee et al. (2018). Epigenetic profiling to environmental stressors in model and non-model organisms: Ecotoxicology pers.](Chatterjee.et.al.-.2018.-.Epigenetic.profiling.to.environmental.stressors.in.model.and.non-model.organisms.Ecotoxicology.pers.pdf)
+
 ## Student Presenter
 
 **Chris Mantegna**
