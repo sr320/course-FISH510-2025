@@ -52,7 +52,7 @@ Papers: Sol Dourdin AND Chatterjee
 
 -   [Supplement](week-04-supplement.md)
 
-[<img src="thumbnail.png" alt="▶️ Watch video" width="300"/>](http://gannet.fish.washington.edu/seashell/snaps/Oyster_s_Epigenetic_Warning.mp4)
+[<img src="thumbnail.png" alt="▶️ Watch video" width="300"/>](Oyster_s_Epigenetic_Warning.mp4)
 
 ## Assessment
 
