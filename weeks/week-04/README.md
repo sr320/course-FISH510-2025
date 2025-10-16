@@ -23,7 +23,7 @@ By the end of this week, students will be able to:\
 
 ## Student Presenter
 
-**Chris Mantegna**
+**Chris Mantegna**   
 Papers: Sol Dourdin AND Chatterjee
 
 ## Optional Reading
