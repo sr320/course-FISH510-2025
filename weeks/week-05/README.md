@@ -33,6 +33,11 @@ Papers to be presented: Listed in Required Readings above
 3. What are the challenges in annotating and functionally characterizing lncRNAs and miRNAs in non-model marine organisms?
 4. Could ncRNA expression serve as a biomarker for environmental monitoring in aquaculture or conservation applications?
 
+
+## Supplemental
+
+http://gannet.fish.washington.edu/seashell/snaps/The_Coral_Code.mp4
+
 ## Activities
 - Student presentations and discussion leadership  
 - Whiteboarding
