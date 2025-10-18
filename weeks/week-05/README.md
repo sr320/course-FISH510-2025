@@ -36,7 +36,7 @@ Papers to be presented: Listed in Required Readings above
 
 ## Supplemental
 
-http://gannet.fish.washington.edu/seashell/snaps/The_Coral_Code.mp4
+VIDEO: http://gannet.fish.washington.edu/seashell/snaps/The_Coral_Code.mp4
 
 ## Activities
 - Student presentations and discussion leadership  
