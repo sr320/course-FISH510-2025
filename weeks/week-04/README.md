@@ -52,7 +52,7 @@ Papers: Sol Dourdin AND Chatterjee
 
 -   [Supplement](week-04-supplement.md)
 
-[<img src="thumbnail.png" alt="▶️ Watch video" width="300"/>](https://gannet.fish.washington.edu/seashell/snaps/A_Ghost_in_Your_Genes.mp4))
+[<img src="thumbnail.png" alt="▶️ Watch video" width="300"/>](https://gannet.fish.washington.edu/seashell/snaps/A_Ghost_in_Your_Genes.mp4)
 
 ## Assessment
 
