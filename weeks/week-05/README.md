@@ -24,6 +24,8 @@ By the end of this week, students will be able to:
 
 Papers to be presented: Listed in Required Readings above
 
+[Presentation Slides](https://docs.google.com/presentation/d/1zEVQEBN8Tg0aFTi4o4f5ktTVdATh6_yo_mQhQZfnIRM/edit?usp=sharing)
+
 ## Optional Readings
 - [Non-coding RNA Repertoire in Reef-Building Corals. Jill Ashey, Javier A. Rodriguez-Casariego, Kathleen M. Durkin, Zachary Bengtsson, Samuel J. White, Ariana S. Huffmyer, Danielle M. Becker, Jose M. Eirin-Lopez, Hollie M. Putnam, Steven B. Roberts bioRxiv 2025.03.15.643469](2025.03.15.643469v1.full.pdf) doi: https://doi.org/10.1101/2025.03.15.643469
 
