@@ -9,7 +9,7 @@ By the end of this week, students will be able to:
    - [Key subtopics to be added]
 
 ## Required Readings
-- [Readings to be assigned]
+- [Complementary genomic and epigenomic adaptation to environmental stress](Complementary_genomic_and_epigenomic_adaptation_to.pdf)
 
 ## Student Presenter
 
