@@ -23,11 +23,11 @@ By the end of this week, students will be able to:
 
 **Zach Bengtsson**
 
-Papers to be presented: [Frontiers in Physiology article on epigenetic mechanisms](https://www.frontiersin.org/journals/physiology/articles/10.3389/fphys.2023.1073625/full)  
+Papers to be presented: [Frontiers in Physiology (2023). doi: 10.3389/fphys.2023.1073625](https://www.frontiersin.org/journals/physiology/articles/10.3389/fphys.2023.1073625/full)  
 
 
 ## Optional Readings
-- [MDPI article on transgenerational effects](https://www.mdpi.com/1467-3045/47/7/554)
+- [Fishes, 47(7), 554](https://www.mdpi.com/1467-3045/47/7/554)
 
 ## Discussion Questions
 1. What experimental approaches are best suited to distinguish true transgenerational inheritance from parental or developmental effects?  
