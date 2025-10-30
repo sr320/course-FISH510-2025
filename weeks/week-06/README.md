@@ -41,6 +41,8 @@ Papers to be presented: [Frontiers in Physiology (2023). doi: 10.3389/fphys.2023
 ## Resources 
 - [Supplement](week-06-supplement.md)
 
+- VIDEO <http://gannet.fish.washington.edu/seashell/snaps/Inheritance__The_Story_You_Don_t_Know.mp4>
+
 ## Assessment
 - Student presentation (15% of final grade)  
 - Participation in discussion (formative)  
