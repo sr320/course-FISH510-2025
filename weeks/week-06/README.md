@@ -36,9 +36,6 @@ Papers to be presented: [Frontiers in Physiology (2023). doi: 10.3389/fphys.2023
 4. How could TEI be leveraged in aquaculture or conservation contexts?  
 
 ## Activities
-- Student-led presentations on marine TEI case studies  
-- Group analysis of a TEI experimental design paper  
-- Debate: “TEI provides a mechanism for rapid adaptation in marine species — agree or disagree?”  
 - Optional: Create a conceptual diagram illustrating pathways of environmental information flow across generations  
 
 ## Resources 
