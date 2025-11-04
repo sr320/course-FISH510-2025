@@ -1,54 +1,54 @@
-# Climate Change and Epigenetic Responses
+# Gene Body Methylation and Chromatin Structure
 
 ## Learning Objectives
 By the end of this week, students will be able to:
-- Understand how climate change stressors (ocean acidification, warming, hypoxia) influence epigenetic processes in marine organisms.
-- Evaluate the role of epigenetic regulation in rapid adaptation to changing ocean conditions.
-- Assess experimental and observational studies linking climate change to epigenetic modifications.
-- Critically analyze the potential for epigenetic mechanisms to buffer marine populations against climate impacts.
-- Discuss the implications of climate-driven epigenetic changes for conservation and ecosystem management.
+- Understand the patterns and functions of gene body methylation in invertebrates.
+- Distinguish between gene body methylation and promoter methylation and their respective roles in gene regulation.
+- Evaluate the relationship between DNA methylation, chromatin structure, and gene expression.
+- Assess the potential for DNA methylation patterns as biomarkers for aging and biological processes.
+- Compare methylation patterns and functions across diverse invertebrate taxa.
 
 ## Key Topics
-1. **Climate Change Stressors and Epigenetic Responses**
-   - Ocean warming and temperature-driven epigenetic modifications
-   - Ocean acidification and pH-related epigenetic changes
-   - Hypoxia and oxygen limitation effects
-   - Multiple stressor interactions
+1. **DNA Methylation Patterns in Invertebrates**
+   - Gene body methylation versus promoter methylation
+   - CpG methylation distribution across the genome
+   - Taxonomic variation in methylation systems
+   - Methylation and chromatin compartments (euchromatin vs heterochromatin)
 
-2. **Adaptation and Acclimatization Mechanisms**
-   - Rapid versus long-term epigenetic responses
-   - Epigenetic plasticity as a buffer to climate change
-   - Limits to epigenetic adaptation
-   - Integration of genetic and epigenetic variation
+2. **Methylation and Gene Regulation**
+   - Positive association between gene body methylation and expression
+   - Promoter methylation and gene repression
+   - Transcription start site (TSS) methylation dynamics
+   - Open chromatin peaks and methylation patterns
 
-3. **Ecological and Evolutionary Implications**
-   - Population-level responses to climate stressors
-   - Epigenetic rescue and evolutionary rescue
-   - Vulnerability assessment and predictive modeling
-   - Conservation applications
+3. **Epigenetic Clocks and Age-Associated Methylation**
+   - Age-linked differentially methylated loci
+   - Epigenetic biomarkers for biological age
+   - Applications for assessing health and stress resilience
+   - Implications for wild and cultured populations
 
 ## Required Readings
-- [Wilcox, S., et al. (2025). Coral holobiont transcriptional response to environmental stress is shaped by life-history strategy, symbiont community composition, and past thermal exposure. *bioRxiv*, 2025.10.30.682900](https://www.biorxiv.org/content/10.1101/2025.10.30.682900v1)
+- [Hiebert, L.S., et al. (2025). Integrated Genomic and Methylome Profiling Reveals Promoter Repression and Age-Linked CpGs in the California Mussel. *bioRxiv*, 2025.08.27.672726](https://www.biorxiv.org/content/10.1101/2025.08.27.672726v1.full.pdf)
 
-- [Ashey, J., et al. (2025). Coral calcifying cell profiling reveals gene expression dynamics during ocean acidification and heat stress. *bioRxiv*, 2025.08.27.672726](https://www.biorxiv.org/content/10.1101/2025.08.27.672726v1.full.pdf)
+- [Planidin, N., et al. (2025). Gene body methylation is associated with chromatin compartments in the stick insect Timema cristinae. *bioRxiv*, 2025.10.30.682900](https://www.biorxiv.org/content/10.1101/2025.10.30.682900v1)
 
 ## Student Presenter
 
 **Kenna Dailey**
 
-Papers to be presented: Wilcox et al. (2025) AND Ashey et al. (2025)
+Papers to be presented: Hiebert et al. (2025) AND Planidin et al. (2025)
 
 ## Discussion Questions
-1. How do epigenetic responses to climate stressors differ across marine taxa with different life history strategies?
-2. What evidence suggests that epigenetic plasticity can facilitate adaptation to rapid environmental change versus simply delaying inevitable population declines?
-3. How might past thermal exposure history influence current epigenetic responses to climate stressors?
-4. What are the limitations of using laboratory experiments to predict epigenetic responses in wild populations experiencing climate change?
-5. How can understanding epigenetic responses to climate change inform marine conservation and management strategies?
+1. How do gene body methylation patterns in invertebrates compare to those in vertebrates, and what might explain these differences?
+2. What mechanisms could explain the positive correlation between gene body methylation and gene expression?
+3. How does the relationship between methylation and chromatin structure inform our understanding of epigenetic regulation?
+4. What are the advantages and limitations of using age-associated methylation sites as epigenetic clocks in marine invertebrates?
+5. How might understanding methylation patterns in diverse invertebrate taxa advance our knowledge of epigenetic evolution?
 
 ## Activities
 - Student presentations and discussion leadership
-- Critical evaluation of experimental designs in climate change epigenetics research
-- Optional: Whiteboarding - connecting epigenetic mechanisms to climate adaptation scenarios
+- Comparative analysis of methylation patterns across invertebrate taxa
+- Optional: Whiteboarding - mapping relationships between methylation, chromatin structure, and gene expression
 
 ## Assessment
 - Student presentation (15% of final grade)
