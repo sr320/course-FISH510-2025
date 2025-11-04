@@ -25,6 +25,8 @@ By the end of this week, students will be able to:
 
 Papers to be presented: [Frontiers in Physiology (2023). doi: 10.3389/fphys.2023.1073625](https://www.frontiersin.org/journals/physiology/articles/10.3389/fphys.2023.1073625/full)  
 
+[Presentation Slides](Epigenetics_Week6_Slides.pdf)
+
 
 ## Optional Readings
 - [Fishes, 47(7), 554](https://www.mdpi.com/1467-3045/47/7/554)
