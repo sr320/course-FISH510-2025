@@ -1,69 +1,69 @@
-# Week 8: Population-level Epigenetic Variation
+# Week 8: Epigenetic Clocks and Age Estimation
 
 ## Learning Objectives
 
 By the end of this week, students will be able to:
 
-- Understand how epigenetic variation contributes to population-level adaptation across environmental gradients
-- Distinguish between genomic and epigenomic mechanisms of adaptation to environmental heterogeneity
-- Evaluate the complementary roles of genetic and epigenetic variation in population persistence
-- Analyze population genomic and epigenomic data to identify signatures of environmental adaptation
-- Assess the relative contributions of DNA sequence variation versus DNA methylation in facilitating local adaptation
+- Understand the concept of epigenetic aging clocks and how DNA methylation patterns change with age
+- Explain the advantages of epigenetic age estimation compared to traditional aging methods in wildlife
+- Evaluate the development and calibration of species-specific epigenetic clocks
+- Analyze the accuracy and limitations of DNA methylation-based age prediction
+- Discuss applications of epigenetic clocks in wildlife research, management, and conservation
 
 ## Key Topics
 
-1. **Epigenetic diversity within and between populations**
-   - Population-level patterns of DNA methylation
-   - Epigenetic variation across environmental gradients
-   - Within-population versus between-population epigenetic differentiation
-   - Relationship between genetic and epigenetic diversity
+1. **Epigenetic Aging and DNA Methylation**
+   - Age-related DNA methylation changes
+   - CpG sites associated with chronological age
+   - Species-specific methylation patterns
+   - Relationship between DNAm age and chronological age
 
-2. **Complementary adaptation mechanisms**
-   - Genomic adaptation through sequence variation
-   - Epigenomic adaptation through methylation changes
-   - Interactive effects of genetic and epigenetic variation
-   - Relative contributions to phenotypic variation
+2. **Traditional vs. Epigenetic Aging Methods**
+   - Cementum annuli counting in teeth
+   - Limitations of tooth-based aging (observer variability, laboratory differences, accuracy)
+   - Advantages of DNA methylation-based approaches
+   - Non-lethal sampling (blood vs. tooth extraction)
 
-3. **Environmental associations**
-   - Temperature-associated epigenetic variation
-   - Salinity-related methylation patterns
-   - Latitude and climate correlations with epigenetic marks
-   - Local versus global environmental drivers
+3. **Development of Epigenetic Clocks**
+   - Calibration using known-age individuals
+   - Statistical modeling and prediction accuracy
+   - Median absolute error and correlation coefficients
+   - Validation across different populations
 
-4. **Evolutionary implications**
-   - Epigenetic differentiation and population structure
-   - Rapid adaptation in introduced/invasive species
-   - Role of epigenetics in facilitating range expansion
-   - Mechanisms of population persistence under environmental change
+4. **Applications in Wildlife Management**
+   - Demographic parameter estimation
+   - Population monitoring and assessment
+   - Conservation implications
+   - Use in research where accurate age data is essential
 
 ## Required Readings
 
-- [Gao, Y., Chen, Y., Li, S., Huang, X., Hu, J., Bock, D.G., MacIsaac, H.J., & Zhan, A. (2022). Complementary genomic and epigenomic adaptation to environmental heterogeneity. *Molecular Ecology*, 31, 3598-3612.](Complementary_genomic_and_epigenomic_adaptation_to.pdf)
+- [Woodruff, S.P., Milčiūtė, M., Gordevičius, J., Brooke, R., & Atwood, T.C. (2025). Estimating Polar Bear (*Ursus maritimus*) Age Based on an Epigenetic DNA Methylation Clock. *Ecology and Evolution*, 15, e71870.](ECE3-15-e71870.pdf)
 
 ## Student Presenter
 
 **Kenna Dailey**
 
-Papers to be presented: Gao et al. (2022) - Complementary genomic and epigenomic adaptation to environmental heterogeneity
+Papers to be presented: Woodruff et al. (2025) - Estimating Polar Bear Age Based on an Epigenetic DNA Methylation Clock
 
 ## Discussion Questions
 
-1. How do genomic and epigenomic mechanisms complement each other in facilitating adaptation to environmental heterogeneity? What are the potential advantages of each mechanism?
+1. What are the key advantages of epigenetic clocks over traditional aging methods like tooth extraction and cementum annuli counting? What challenges might remain?
 
-2. What role might epigenetic variation play in the success of invasive species, particularly those that experience rapid environmental change during range expansion?
+2. How accurate was the polar bear epigenetic clock (r = 0.97, median absolute error ~9 months), and is this level of accuracy sufficient for wildlife management applications?
 
-3. How can we distinguish between adaptive epigenetic variation and epigenetic variation that is simply a plastic response to environmental conditions? What evidence would be needed?
+3. The epigenetic clock predictions ranged from 1.43 to 18.63 years compared to tooth age estimates of 3.23-25.27 years. What might explain these differences, and which method is more reliable?
 
-4. Given that both genetic and epigenetic variation contribute to environmental adaptation, how should conservation and management strategies account for epigenetic diversity in natural populations?
+4. How might epigenetic clocks be applied to other marine mammals or wildlife species? What considerations would be important for developing species-specific clocks?
 
-5. What are the methodological challenges in studying population-level epigenetic variation in marine organisms, particularly non-model species?
+5. What are the broader implications of using epigenetic markers for age estimation in conservation and management, particularly for threatened or endangered species?
 
 ## Activities
 
 - Student presentation and discussion leadership
-- Group discussion: Comparing genetic versus epigenetic contributions to adaptation
-- Case study analysis: Examining population-level methylation patterns in the context of environmental gradients
-- Critical evaluation: Designing experiments to test for adaptive versus plastic epigenetic variation
+- Group discussion: Comparing traditional and molecular aging techniques
+- Case study analysis: Evaluating the accuracy metrics of the polar bear epigenetic clock
+- Critical evaluation: Designing sampling protocols for developing epigenetic clocks in marine species
 
 ## Assessment
 
