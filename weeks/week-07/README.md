@@ -34,11 +34,9 @@ By the end of this week, students will be able to:
 
 
 ## Discussion Questions
-1. How do gene body methylation patterns in invertebrates compare to those in vertebrates, and what might explain these differences?
-2. What mechanisms could explain the positive correlation between gene body methylation and gene expression?
-3. How does the relationship between methylation and chromatin structure inform our understanding of epigenetic regulation?
-4. What are the advantages and limitations of using age-associated methylation sites as epigenetic clocks in marine invertebrates?
-5. How might understanding methylation patterns in diverse invertebrate taxa advance our knowledge of epigenetic evolution?
+1. These two papers are preprints, take this into consderation and provide thoughtful suggestions on what might or might not improve the works.
+2. To what degree do these work advance your understanding?
+3. What are aspects that are confusing or not clear?
 
 
 
