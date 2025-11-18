@@ -109,11 +109,6 @@ Followed by:
 
 ## Assessment
 
-### Final Project (30% of final grade)
-- Quality and completeness of deliverable (15%)
-- Reflection/critical evaluation component (10%)
-- Presentation and communication (5%)
-
 ### Evaluation Criteria
 **For Option 1 (SciComm Project)**:
 - Clarity and accessibility of communication
@@ -133,7 +128,7 @@ Followed by:
 - Constructive feedback on classmate presentations (formative)
 - Participation in discussion and questions
 
-### Course Reflection Essay (5% of final grade)
+### Course Reflection Essay 
 Brief essay (500-750 words) on:
 - Key learnings from the course
 - How course content might apply to your research
