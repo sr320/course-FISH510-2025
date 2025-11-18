@@ -40,17 +40,13 @@ By the end of this week, students will be able to:
    - Applications in aquaculture and selective breeding
 
 ## Required Readings
-- Complementary genomic and epigenomic adaptation to environmental stress
+- Complementary genomic and epigenomic adaptation to environmental stress :: <https://onlinelibrary.wiley.com/doi/full/10.1111/mec.16500>
 
 ## Student Presenter
 
-**Celeste Valdista**
+**Celeste Valdivia**
 
 Papers to be presented: Complementary genomic and epigenomic adaptation
-
-## Video
-
-[Invader's Superpower](http://gannet.fish.washington.edu/seashell/snaps/Invader_s_Superpower.mp4)
 
 ## Discussion Questions 
 1. How do genomic and epigenomic mechanisms complement each other in facilitating adaptation to environmental stress? What are the advantages of having both mechanisms available?
