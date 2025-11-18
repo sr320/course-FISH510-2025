@@ -40,7 +40,7 @@ By the end of this week, students will be able to:
    - Selective breeding and stress-hardening strategies
 
 ## Required Readings
-- [Yan, Y., et al. (2025). Dynamic and Functional miRNA-Mediated Gene Regulations in Response to Recurrent Thermal Stress. *Molecular Ecology*, e17639.](yan-20225.pdf)
+- [Yan, Y., et al. (2025). Dynamic and Functional miRNA-Mediated Gene Regulations in Response to Recurrent Thermal Stress. *Molecular Ecology*, e17639.](yan-2025.pdf)
 
 
 ## Discussion Questions 
