@@ -40,14 +40,10 @@ By the end of this week, students will be able to:
    - Selective breeding and stress-hardening strategies
 
 ## Required Readings
-- [Yan, Y., et al. (2025). Dynamic and Functional miRNA-Mediated Gene Regulations in Response to Recurrent Thermal Stress. *Molecular Ecology*, e17639.](https://doi.org/10.1111/mec.17639)
+- [Yan, Y., et al. (2025). Dynamic and Functional miRNA-Mediated Gene Regulations in Response to Recurrent Thermal Stress. *Molecular Ecology*, e17639.](yan-20225.pdf)
 
-## Student Presenter
-**[To be assigned]**
 
-Papers to be presented: Yan et al. (2025) - Dynamic and Functional miRNA-Mediated Gene Regulations in Response to Recurrent Thermal Stress
-
-## Discussion Questions
+## Discussion Questions 
 1. How do miRNA expression patterns differ between first-time and recurrent thermal stress exposure? What does this tell us about molecular memory mechanisms?
 
 2. The study examines "dynamic" changes in miRNA regulation. What advantages might dynamic (rather than static) regulation provide for organisms facing variable environmental conditions?
@@ -63,16 +59,11 @@ Papers to be presented: Yan et al. (2025) - Dynamic and Functional miRNA-Mediate
 7. How might understanding miRNA-mediated regulation inform conservation strategies or aquaculture practices aimed at improving thermal resilience?
 
 ## Activities
-- Student presentation and discussion leadership
 - Critical analysis: Interpreting miRNA-mRNA correlation networks
-- Group discussion: Comparing miRNA regulation with other epigenetic mechanisms studied in previous weeks
-- Case study analysis: Evaluating the potential of miRNAs as biomarkers for stress monitoring
+
 
 ## Assessment
-- Student presentation (15% of final grade)
 - Participation in discussion (formative)
-- Engagement with network analysis and case studies (formative)
 
----
 
-*Next week: Current Frontiers and Future Directions*
+
