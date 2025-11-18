@@ -46,6 +46,11 @@ By the end of this week, students will be able to:
 
 Papers to be presented: Woodruff et al. (2025) - Estimating Polar Bear Age Based on an Epigenetic DNA Methylation Clock
 
+## Video
+
+[A Clock in the Blood](http://gannet.fish.washington.edu/seashell/snaps/A_Clock_in_the_Blood.mp4)
+
+
 ## Discussion Questions
 
 1. What are the key advantages of epigenetic clocks over traditional aging methods like tooth extraction and cementum annuli counting? What challenges might remain?
