@@ -42,6 +42,11 @@ By the end of this week, students will be able to:
 ## Required Readings
 - [Yan, Y., et al. (2025). Dynamic and Functional miRNA-Mediated Gene Regulations in Response to Recurrent Thermal Stress. *Molecular Ecology*, e17639.](yan-2025.pdf)
 
+## Video
+
+[Invader's Superpower](http://gannet.fish.washington.edu/seashell/snaps/Invader_s_Superpower.mp4)
+
+
 
 ## Discussion Questions 
 1. How do miRNA expression patterns differ between first-time and recurrent thermal stress exposure? What does this tell us about molecular memory mechanisms?
