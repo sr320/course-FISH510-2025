@@ -38,7 +38,7 @@ By the end of this week, students will be able to:
 
 ## Required Readings
 
-- [Woodruff, S.P., Milčiūtė, M., Gordevičius, J., Brooke, R., & Atwood, T.C. (2025). Estimating Polar Bear (*Ursus maritimus*) Age Based on an Epigenetic DNA Methylation Clock. *Ecology and Evolution*, 15, e71870.](ECE3-15-e71870.pdf)
+- [Woodruff, S.P., Milčiūtė, M., Gordevičius, J., Brooke, R., & Atwood, T.C. (2025). Estimating Polar Bear (*Ursus maritimus*) Age Based on an Epigenetic DNA Methylation Clock. *Ecology and Evolution*, 15, e71870.](https://pmc.ncbi.nlm.nih.gov/articles/PMC12304446/pdf/ECE3-15-e71870.pdf)
 
 ## Student Presenter
 
