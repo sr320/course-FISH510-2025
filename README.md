@@ -35,13 +35,18 @@ By the end of this course, students will be able to:
 │   ├── papers/                # Key research papers
 │   ├── datasets/              # Example datasets
 │   └── tools/                 # Computational tools and scripts
-└── chatbot/                    # AI-powered course assistant (DEPLOYED)
+├── chatbot/                    # AI-powered course assistant (DEPLOYED)
+└── scripts/                    # Utility scripts for course management
+    └── discussion_stats.py    # Count posts by user in GitHub Discussions
 
 ```
 
 ## Communication
 - **GitHub Discussions**: Use the repository's Discussion board for course-related posts, questions, and peer interactions
 - **Issues**: Report any technical problems or suggest improvements to course materials
+
+### 📊 Discussion Statistics
+Track participation in GitHub Discussions using the `discussion_stats.py` script in the `scripts/` directory. This tool counts the number of posts (discussions + comments) by each user. See `scripts/README.md` for usage instructions.
 
 ## Getting Started
 1. Explore the weekly content in the `weeks/` directory
