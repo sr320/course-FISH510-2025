@@ -9,7 +9,7 @@ Usage:
     python discussion_stats.py
 
 Requirements:
-    - PyGithub library (install with: pip install PyGithub)
+    - requests library (install with: pip install requests)
     - GitHub Personal Access Token (set as GITHUB_TOKEN environment variable)
       or pass as --token argument
 """
@@ -25,6 +25,93 @@ try:
 except ImportError:
     print("Error: requests library not found. Install it with: pip install requests")
     sys.exit(1)
+
+
+def get_author_login(item: Dict) -> str:
+    """
+    Safely extract author login from a discussion or comment item.
+    
+    Args:
+        item: Dictionary containing author information
+        
+    Returns:
+        Author's login name or None if not available
+    """
+    if item and item.get("author") and item["author"].get("login"):
+        return item["author"]["login"]
+    return None
+
+
+def fetch_discussion_comments(owner: str, repo: str, discussion_number: int, 
+                              token: str, headers: Dict) -> list:
+    """
+    Fetch all comments for a specific discussion with pagination.
+    
+    Args:
+        owner: Repository owner
+        repo: Repository name
+        discussion_number: Discussion number
+        token: GitHub personal access token
+        headers: Request headers
+        
+    Returns:
+        List of all comment nodes
+    """
+    all_comments = []
+    has_next_page = True
+    end_cursor = None
+    
+    while has_next_page:
+        query = """
+        query($owner: String!, $repo: String!, $discussionNumber: Int!, $cursor: String) {
+          repository(owner: $owner, name: $repo) {
+            discussion(number: $discussionNumber) {
+              comments(first: 100, after: $cursor) {
+                pageInfo {
+                  hasNextPage
+                  endCursor
+                }
+                nodes {
+                  author {
+                    login
+                  }
+                }
+              }
+            }
+          }
+        }
+        """
+        
+        variables = {
+            "owner": owner,
+            "repo": repo,
+            "discussionNumber": discussion_number,
+            "cursor": end_cursor
+        }
+        
+        try:
+            response = requests.post(
+                "https://api.github.com/graphql",
+                json={"query": query, "variables": variables},
+                headers=headers
+            )
+            response.raise_for_status()
+            data = response.json()
+            
+            if "errors" in data or not data.get("data"):
+                break
+            
+            comments = data["data"]["repository"]["discussion"]["comments"]
+            all_comments.extend(comments["nodes"])
+            
+            page_info = comments["pageInfo"]
+            has_next_page = page_info["hasNextPage"]
+            end_cursor = page_info["endCursor"]
+            
+        except (requests.exceptions.RequestException, KeyError, TypeError):
+            break
+    
+    return all_comments
 
 
 def fetch_discussions_graphql(owner: str, repo: str, token: str) -> Dict[str, int]:
@@ -50,7 +137,7 @@ def fetch_discussions_graphql(owner: str, repo: str, token: str) -> Dict[str, in
     end_cursor = None
     
     while has_next_page:
-        # GraphQL query to fetch discussions and comments
+        # GraphQL query to fetch discussions with basic info
         query = """
         query($owner: String!, $repo: String!, $cursor: String) {
           repository(owner: $owner, name: $repo) {
@@ -60,15 +147,9 @@ def fetch_discussions_graphql(owner: str, repo: str, token: str) -> Dict[str, in
                 endCursor
               }
               nodes {
+                number
                 author {
                   login
-                }
-                comments(first: 100) {
-                  nodes {
-                    author {
-                      login
-                    }
-                  }
                 }
               }
             }
@@ -99,13 +180,20 @@ def fetch_discussions_graphql(owner: str, repo: str, token: str) -> Dict[str, in
             
             # Count discussion posts (original posts)
             for discussion in discussions["nodes"]:
-                if discussion["author"] and discussion["author"]["login"]:
-                    user_posts[discussion["author"]["login"]] += 1
+                author_login = get_author_login(discussion)
+                if author_login:
+                    user_posts[author_login] += 1
                 
-                # Count comments
-                for comment in discussion["comments"]["nodes"]:
-                    if comment["author"] and comment["author"]["login"]:
-                        user_posts[comment["author"]["login"]] += 1
+                # Fetch and count all comments for this discussion
+                discussion_number = discussion["number"]
+                all_comments = fetch_discussion_comments(
+                    owner, repo, discussion_number, token, headers
+                )
+                
+                for comment in all_comments:
+                    author_login = get_author_login(comment)
+                    if author_login:
+                        user_posts[author_login] += 1
             
             # Check pagination
             page_info = discussions["pageInfo"]
