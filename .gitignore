@@ -12,3 +12,8 @@ chatbot/__pycache__/
 chatbot/frontend/node_modules/
 chatbot/frontend/build/
 .DS_Store
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
